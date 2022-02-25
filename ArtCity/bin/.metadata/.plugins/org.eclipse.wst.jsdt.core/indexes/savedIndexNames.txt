@@ -1,0 +1,5 @@
+INDEX VERSION 1.4+/Users/Carlos/Documents/GitHub/ArtCity/ArtCity/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2078219512.index
+1100827021.index
+1133524808.index
+3640091988.index
