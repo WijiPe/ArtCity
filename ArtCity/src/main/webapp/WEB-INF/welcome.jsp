@@ -40,6 +40,7 @@
 		<div>
 			<img src="images/7-Tips-to-Finding-Art-Inspiration-Header-1024x649.jpg" alt="ArtCityLogo" width="600" height="400">
 		</div>
+		first
 	</div>
 </body>
 </html>
