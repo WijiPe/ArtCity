@@ -6,6 +6,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +31,7 @@ public class UserController {
 		return "login.jsp";
 	
 	@PostMapping("/register")
-	public String register(@Valid @ModelAttribute("newUser") User newUser, BindingREsuilt result, Model model, HttpSession session) {
+	public String register(@Valid @ModelAttribute("newUser") User newUser, BindingResult result, Model model, HttpSession session) {
 		userService.register(newUser, result);
 		if ( result.hasErrors()) {
 			model.addAttribute("newlogin", new LoginUser());
@@ -38,9 +39,9 @@ public class UserController {
 		}
 			session.setAttribute("user", newUser);
 			return "redirect:/welcome";
-		
+	}
 	@PostMapping("/login")
-	public String login(@Valid @ModelAttribute("newlogin") LoginUser newLogin, BindingREsuilt result, Model model, HttpSession session) {
+	public String login(@Valid @ModelAttribute("newlogin") LoginUser newLogin, BindingResuilt result, Model model, HttpSession session) {
 		User user = userService.login(newLogin, result);
 		
 	if (result.hasErrors()) {
