@@ -20,7 +20,7 @@
 			<div class="d-flex align-items-center">
 				<p>UserName</p>
 				<img src="images/user_img.png" alt="user_img" width="100"
-					height="75">
+					height="75" clss="rounded-circle">
 			</div>
 		</div>
 	</div>
