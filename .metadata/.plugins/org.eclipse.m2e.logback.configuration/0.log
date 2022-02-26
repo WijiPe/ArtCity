@@ -1557,3 +1557,6 @@ java.net.URISyntaxException: Illegal character in path at index 16: file:/C:/Pro
 2022-02-25 19:33:44,524 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-02-25 19:33:44,525 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2022-02-25 19:33:44,525 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-25 19:33:44,528 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-25 19:33:44,528 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-25 19:33:44,528 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Wiji\OneDrive\Documents\Dojo\JAVAproject\ArtCity\ArtCity\src\test\resources
