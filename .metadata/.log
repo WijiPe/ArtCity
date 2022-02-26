@@ -1458,3 +1458,104 @@ java.net.URISyntaxException: Illegal character in path at index 16: file:/C:/Pro
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-02-25 21:02:43.253
 !MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.hdvFshDy => OK
+
+!ENTRY org.eclipse.jdt.core 4 0 2022-02-25 22:49:04.212
+!MESSAGE Failed to update qualified index.
+!STACK 0
+java.io.UTFDataFormatException
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readStreamChars(DiskIndex.java:986)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readChunk(DiskIndex.java:758)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:631)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:530)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:225)
+	at org.eclipse.jdt.internal.core.index.MetaIndex.save(MetaIndex.java:100)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveMetaIndex(IndexManager.java:1238)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1214)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:818)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobManager.java:422)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2022-02-25 22:49:04.932
+!MESSAGE Unable to add com/example/artcity/ArtCity/1.0.1/ArtCity-1.0.1.pom
+!STACK 0
+java.lang.RuntimeException: java.nio.file.NoSuchFileException: C:\Users\Wiji\OneDrive\Documents\Dojo\JAVAproject\ArtCity\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_7.cfe
+	at org.apache.lucene.index.TieredMergePolicy$SegmentByteSizeDescending.compare(TieredMergePolicy.java:258)
+	at org.apache.lucene.index.TieredMergePolicy$SegmentByteSizeDescending.compare(TieredMergePolicy.java:238)
+	at java.base/java.util.TimSort.binarySort(TimSort.java:296)
+	at java.base/java.util.TimSort.sort(TimSort.java:221)
+	at java.base/java.util.Arrays.sort(Arrays.java:1307)
+	at java.base/java.util.ArrayList.sort(ArrayList.java:1721)
+	at java.base/java.util.Collections.sort(Collections.java:179)
+	at org.apache.lucene.index.TieredMergePolicy.findMerges(TieredMergePolicy.java:292)
+	at org.apache.lucene.index.IndexWriter.updatePendingMerges(IndexWriter.java:1966)
+	at org.apache.lucene.index.IndexWriter.maybeMerge(IndexWriter.java:1930)
+	at org.apache.lucene.index.IndexWriter.getReader(IndexWriter.java:455)
+	at org.apache.lucene.index.StandardDirectoryReader.doOpenFromWriter(StandardDirectoryReader.java:286)
+	at org.apache.lucene.index.StandardDirectoryReader.doOpenIfChanged(StandardDirectoryReader.java:261)
+	at org.apache.lucene.index.StandardDirectoryReader.doOpenIfChanged(StandardDirectoryReader.java:251)
+	at org.apache.lucene.index.DirectoryReader.openIfChanged(DirectoryReader.java:137)
+	at org.apache.lucene.search.SearcherManager.refreshIfNeeded(SearcherManager.java:154)
+	at org.apache.lucene.search.SearcherManager.refreshIfNeeded(SearcherManager.java:58)
+	at org.apache.lucene.search.ReferenceManager.doMaybeRefresh(ReferenceManager.java:176)
+	at org.apache.lucene.search.ReferenceManager.maybeRefresh(ReferenceManager.java:225)
+	at org.apache.maven.index.context.DefaultIndexingContext.acquireIndexSearcher(DefaultIndexingContext.java:556)
+	at org.apache.maven.index.context.DefaultIndexingContext.getGroups(DefaultIndexingContext.java:843)
+	at org.apache.maven.index.context.DefaultIndexingContext.getRootGroups(DefaultIndexingContext.java:829)
+	at org.apache.maven.index.DefaultIndexerEngine.updateGroups(DefaultIndexerEngine.java:161)
+	at org.apache.maven.index.DefaultIndexerEngine.update(DefaultIndexerEngine.java:88)
+	at org.apache.maven.index.DefaultIndexer.addArtifactsToIndex(DefaultIndexer.java:129)
+	at org.apache.maven.index.DefaultNexusIndexer.addArtifactToIndex(DefaultNexusIndexer.java:347)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.addDocument(NexusIndexManager.java:613)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.mavenProjectChanged(NexusIndexManager.java:781)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:818)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:985)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:314)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:151)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:156)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:88)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:198)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:853)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:232)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:281)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:334)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:337)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:389)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:410)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:160)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.nio.file.NoSuchFileException: C:\Users\Wiji\OneDrive\Documents\Dojo\JAVAproject\ArtCity\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_7.cfe
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+	at java.base/java.nio.file.Files.size(Files.java:2468)
+	at org.apache.lucene.store.FSDirectory.fileLength(FSDirectory.java:210)
+	at org.apache.lucene.index.SegmentCommitInfo.sizeInBytes(SegmentCommitInfo.java:233)
+	at org.apache.lucene.index.MergePolicy.size(MergePolicy.java:450)
+	at org.apache.lucene.index.TieredMergePolicy$SegmentByteSizeDescending.compare(TieredMergePolicy.java:248)
+	... 49 more
+
+!ENTRY org.eclipse.jdt.core 4 0 2022-02-25 23:04:00.274
+!MESSAGE Failed to update qualified index.
+!STACK 0
+java.io.UTFDataFormatException
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readStreamChars(DiskIndex.java:986)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readChunk(DiskIndex.java:758)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:631)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:530)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:225)
+	at org.eclipse.jdt.internal.core.index.MetaIndex.save(MetaIndex.java:100)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveMetaIndex(IndexManager.java:1238)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1214)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:818)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobManager.java:422)
+	at java.base/java.lang.Thread.run(Thread.java:833)
