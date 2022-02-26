@@ -27,7 +27,7 @@ public class UserController {
 				return "redirect: /welcome";
 	}
 		model.addAttribute("newUser", new User());
-		model.addAttribute("newLogin", LoginUser());
+		model.addAttribute("newLogin", new LoginUser());
 		return "login.jsp";
 	
 	@PostMapping("/register")
