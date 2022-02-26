@@ -1,0 +1,7 @@
+package com.example.artcity.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface ArtRepository extends CrudRepository<T, ID> {
+
+}

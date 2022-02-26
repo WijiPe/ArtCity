@@ -1,0 +1,72 @@
+package com.example.artcity.models;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.validation.constraints.Positive;
+
+@Entity
+@Table(name="arts")
+public class Art {
+	
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @NotEmpty(message="Name is required!")
+    @Size(min=3, max=30, message="Name must be between 3 and 30 characters")
+    private String name;
+    
+    @NotEmpty(message="Description is required!")
+    @Size(min=3, max=30, message="Description must be between 3 and 30 characters")
+    private String description;
+    
+    @NotNull
+    @Positive(message="Amount must be at greater than 0.")
+    private Double price;
+    
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id")
+    private User artist;
+    
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="collector_id")
+    private User collector;
+    
+    @Column(updatable=false)
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private Date createdAt;
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private Date updatedAt;
+    
+    @PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
+    
+    
+
+
+}
