@@ -9,8 +9,6 @@ public class HomeController {
 	
 	@GetMapping("/art-city")
 	public String welcome(Model model) {
-
-
 		return "welcome.jsp";
 	}
 

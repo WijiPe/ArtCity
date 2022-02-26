@@ -9,7 +9,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/css/main.css"/>
+<link rel="stylesheet" href="/css/welcome.css"/>
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -17,10 +17,15 @@
 </head>
 <body>
 	<div class="topnav">
-  		<a class="active" href="#home">Home</a>
+	<div>
+		<img src="images/Free_Sample_By_Wix.jpg" alt="ArtCityLogo" width="200" height="100">
+	</div>
+	 <div>
+	 	<a class="active" href="#home">Home</a>
   		<a href="#news">News</a>
   		<a href="#contact">Contact</a>
   		<a href="#about">About</a>
+	 </div>
 	</div>
 </body>
 </html>
