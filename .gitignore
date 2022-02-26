@@ -1,4 +1,3 @@
-
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -13,6 +12,7 @@ target/
 .settings
 .springBeans
 .sts4-cache
+.metadata
 
 ### IntelliJ IDEA ###
 .idea
