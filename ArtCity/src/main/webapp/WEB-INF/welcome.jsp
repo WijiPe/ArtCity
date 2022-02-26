@@ -16,16 +16,30 @@
 <title>Welcome Page</title>
 </head>
 <body>
-	<div class="topnav">
-	<div>
-		<img src="images/Free_Sample_By_Wix.jpg" alt="ArtCityLogo" width="200" height="100">
+		<div class="topnav">
+		<div>
+			<img src="images/Free_Sample_By_Wix.jpg" alt="ArtCityLogo" width="200" height="80">
+		</div>
+		<form onsubmit="event.preventDefault();" role="search">
+  			<input class="search" type="search" placeholder="Search items, collections, and accounts" autofocus required  />  
+		</form>
+	 	<div>
+	 		<a class="active" href="#home">Explore</a>
+  			<a href="#news">Create</a>
+	 	</div>
 	</div>
-	 <div>
-	 	<a class="active" href="#home">Home</a>
-  		<a href="#news">News</a>
-  		<a href="#contact">Contact</a>
-  		<a href="#about">About</a>
-	 </div>
+	<div class="main">
+		<div class="main1">
+			<h2>Discover, collect, and sell extraordinary ARTs</h2>
+			<h4>ArtCity is the world's first and largest ART marketplace!</h4>
+			<div class="main2">
+				<a class="button" href="#news" >Explore</a>
+				<a class="btn btn-dark" href="#news" >Create</a>
+			</div>
+		</div>
+		<div>
+			<img src="images/7-Tips-to-Finding-Art-Inspiration-Header-1024x649.jpg" alt="ArtCityLogo" width="600" height="400">
+		</div>
 	</div>
 </body>
 </html>

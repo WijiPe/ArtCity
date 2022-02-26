@@ -3,11 +3,17 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(192, 189, 189);
 }
 
 .topnav {
   overflow: hidden;
   background-color:  white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
 }
 
 .topnav a {
@@ -27,4 +33,38 @@ body {
 .topnav a.active {
   background-color: #04AA6D;
   color: white;
+}
+
+.search{
+	width: 500px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 0 2em;
+}
+
+.main{
+	width: 1300px;
+    height: 800px;
+    margin: 0px auto;
+    display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: space-around;
+}
+
+.main1{
+	width: 400px;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.main2{
+	width: 400px;
+    height: 50px;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    gap:50px;
 }
