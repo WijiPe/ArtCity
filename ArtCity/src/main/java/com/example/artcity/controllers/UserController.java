@@ -31,18 +31,7 @@ public class UserController {
 		return "login.jsp";
 	}
 	
-	@PostMapping("/register")
-	public String register(@Valid @ModelAttribute("newUser") User newUser, BindingResult result, Model model, HttpSession session) {
-		userService.register(newUser, result);
-		if ( result.hasErrors()) {
-			model.addAttribute("newlogin", new LoginUser());
-			return "register.jsp";
-		}
-			session.setAttribute("user", newUser);
-			return "redirect:/welcome";
-	}
-	
-    @PostMapping("/login")
+	@PostMapping("/login")
     public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin,
             BindingResult result, Model model, HttpSession session) {
         User user = userService.login(newLogin, result);
@@ -51,8 +40,26 @@ public class UserController {
             return "login.jsp";
         }
         session.setAttribute("user", user);
-        return "redirect:/welcome";
+        return "dashboard.jsp";
     }
+	
+	@PostMapping("/register")
+	public String register(@Valid @ModelAttribute("newUser") User newUser, BindingResult result, Model model, HttpSession session) {
+		userService.register(newUser, result);
+		if ( result.hasErrors()) {
+			model.addAttribute("newlogin", new LoginUser());
+			return "register.jsp";
+		}
+			session.setAttribute("newUser", newUser);
+			return "dashboard.jsp";
+	}
+	
+	@GetMapping("/register") //           <<<<--      fix
+	public String registration( Model model) {
+		model.addAttribute("newUser", new User());
+		return "register.jsp";
+	}
+
 }
 
 
