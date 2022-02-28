@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -35,6 +36,13 @@ public class User {
     @Size(min=8, max=128, message="Password must be between 8 and 128 characters")
     private String password;
     
+    @NotEmpty(message="About Me is required!")
+    @Size(min=3, max=30, message="About Me must be between 3 and 30 characters")
+    private String description;
+    
+    @Min(0)
+    private Double wallet;
+    
     @Transient
     @NotEmpty(message="Confirm Password is required!")
     @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
@@ -44,7 +52,7 @@ public class User {
     private List<Art> arts;
     
 	@OneToMany(mappedBy="collector", fetch = FetchType.LAZY)
-    private List<Art> nft;
+    private List<Art> nfts;
     
   
     public User() {}
@@ -90,6 +98,26 @@ public class User {
 	}
 
 
+	public String getDescription() {
+		return description;
+	}
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+	public Double getWallet() {
+		return wallet;
+	}
+
+
+	public void setWallet(Double wallet) {
+		this.wallet = wallet;
+	}
+
+
 	public String getConfirm() {
 		return confirm;
 	}
@@ -110,15 +138,17 @@ public class User {
 	}
 
 
-	public List<Art> getNft() {
-		return nft;
+	public List<Art> getNfts() {
+		return nfts;
 	}
 
 
-	public void setNft(List<Art> nft) {
-		this.nft = nft;
+	public void setNfts(List<Art> nfts) {
+		this.nfts = nfts;
 	}
 
+    
+    
 
 
 }
