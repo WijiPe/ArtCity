@@ -21,7 +21,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping("/")
+	@GetMapping("/login")
 	public String login(HttpSession session, Model model) {
 		if (session.getAttribute("user_id") != null) {
 				return "redirect: /welcome";
