@@ -7,7 +7,7 @@
 }
 
 body{
-	background: white;
+	background: secondary;
 }
 
 .topnav {
@@ -60,4 +60,22 @@ body{
     border-radius: 0.5em 0.5em;
     border: solid 0.5px rgba(196, 190, 190, 0.301);
     font-family:'Comfortaa';
+}
+
+.image_placeHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 2px solid;
+}
+.image_placeHolder img {
+    flex-shrink: 0;
+    min-width: 100%;
+}
+.rounded-circle{
+	border:  2px solid;
+}
+.user_nfts{
+	margin-left: 20px;
 }

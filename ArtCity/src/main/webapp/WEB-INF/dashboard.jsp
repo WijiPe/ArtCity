@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <%@ page isErrorPage="true"%>
 <!DOCTYPE html>
 <html>
@@ -10,8 +11,7 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="/css/dashboard.css" />
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Comfortaa">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -52,7 +52,7 @@
 			<div class="card ml-3" style="width: 300px">
 				<div class="card_header">
 					<img class="card-img-top" src="images/art_sample.png"
-						alt="Problem Loading Page" style="width: 100%" height="150">
+						alt="Problem Loading Page" style="width: 100%" height="250">
 				</div>
 				<div
 					class="card-footer d-flex justify-content-between align-items-center">
