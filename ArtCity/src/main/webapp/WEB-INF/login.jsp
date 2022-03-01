@@ -17,8 +17,8 @@
 <meta charset="UTF-8">
 <title>Log In</title>
 
-<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/login.css"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
 <!-- change to match your file/naming structure -->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -45,7 +45,9 @@
 				<form:input type="password" class="form-control" id="inputPassword"
 					path="password" />
 			</div>
-			<input type="submit" value="Login">
+		
+
+		<button class="noselect" type = "submit" value = "Login"></button>
 		</form:form>
 
     <h2>&nbsp;</h2>

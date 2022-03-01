@@ -43,6 +43,12 @@ public class UserController {
         return "dashboard.jsp";
     }
 	
+	@GetMapping("/register")
+	public String registration( Model model) {
+		model.addAttribute("newUser", new User());
+		return "register.jsp";
+	}
+	
 	@PostMapping("/register")
 	public String register(@Valid @ModelAttribute("newUser") User newUser, BindingResult result, Model model, HttpSession session) {
 		userService.register(newUser, result);
@@ -54,11 +60,6 @@ public class UserController {
 			return "dashboard.jsp";
 	}
 	
-	@GetMapping("/register") //           <<<<--      fix
-	public String registration( Model model) {
-		model.addAttribute("newUser", new User());
-		return "register.jsp";
-	}
 
 }
 
