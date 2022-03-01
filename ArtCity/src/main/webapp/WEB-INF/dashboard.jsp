@@ -40,20 +40,19 @@
 			<h1>Explore Collections</h1>
 		</div>
 		<div class="tabs d-flex justify-content-around m-3 border-bottom">
-			<a href="#" class="text-dark mt-3  text-decoration-none">Trending</a> 
+			<a href="#" class="text-dark mt-3 text-decoration-none">Trending</a> 
 			<a href="#" class="text-dark mt-3 text-decoration-none">Most Expensive</a> 
 			<a href="#" class="text-dark mt-3 text-decoration-none">Top Sellers</a> 
 			<a href="#" class="text-dark mt-3 text-decoration-none">Collectibles</a>
 		</div>
 		<div class="pageContents d-flex m-3">
-
 			<!-- 	made few templates for cards  -->
 			<!-- This is the card which looks like the one on welcome page of openseas -->
 			<c:forEach var="art" items="${allArts}">
 				<div class="card ml-3" style="width: 300px">
 					<div class="card_header">
-						<img class="card-img-top" src="${art.artwork}"
-							alt="Problem Loading Page" style="width: 100%" height="250">
+						<a href="artDetails/${art.id} "><img class="card-img-top" src="${art.artwork}"
+							alt="Problem Loading Page" style="width: 100%" height="250"></a>
 					</div>
 					<p>${art.artwork}</p>
 					<div
