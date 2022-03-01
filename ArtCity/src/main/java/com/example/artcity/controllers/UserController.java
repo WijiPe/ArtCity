@@ -32,6 +32,7 @@ public class UserController {
 	}
 
 	@PostMapping("/login")
+
 	public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, Model model,
 			HttpSession session) {
 		User user = userService.login(newLogin, result);
@@ -49,6 +50,7 @@ public class UserController {
 		return "register.jsp";
 	}
 
+
 	@PostMapping("/register")
 	public String register(@Valid @ModelAttribute("newUser") User newUser, BindingResult result, Model model,
 			HttpSession session) {
@@ -57,8 +59,10 @@ public class UserController {
 			model.addAttribute("newlogin", new LoginUser());
 			return "register.jsp";
 		}
+
 		session.setAttribute("newUser", newUser);
 		return "redirect:/dashboard";
 	}
+
 
 }
