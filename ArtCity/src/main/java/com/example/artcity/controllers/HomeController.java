@@ -93,5 +93,11 @@ public class HomeController {
 		
 		return "profilePage.jsp";
 	}
+	
+	@GetMapping("/artDetails")
+	public String artDetails(Model model) {
+		
+		return "artDetails.jsp";
+	}
 
 }
