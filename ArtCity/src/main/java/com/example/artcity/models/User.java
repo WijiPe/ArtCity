@@ -155,6 +155,6 @@ public class User {
     
 	public void doTransactionSell(Double amount) {
 		 this.wallet += amount;
-	 }
+	}
 
 }
