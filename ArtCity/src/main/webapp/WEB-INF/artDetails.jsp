@@ -46,14 +46,18 @@
 	 </div>
 	 <div class="container">
 	 	<div class="box1">
-			<h2>Art Picture</h2>
+			<h2><img src="${art.artwork}"alt="${art.name}" width="500" height="500"></h2>
 	 	</div>
 	 	<div class="box2">
-	 		<h2>Art Name</h2>
-	 		<h4>Owned by "Owner Name"</h4>
-	 		<h4>Prices</h4>
+	 		<h4><c:out value="${art.artist.userName}"/></h4>
+	 		<h1><c:out value="${art.name}"/></h1>
+	 		<h4>Owned By <c:out value="${art.collector.userName}"/></h4>
+	 		<h4><c:out value="${art.price}"/> Dojos </h4>
 	 		<button>Buy Now</button>
-	 		<h3>Description</h3>
+	 		<h2>Description</h2>
+	 		<h4>Create By <c:out value="${art.artist.userName}"/></h4>
+	 		<h4><c:out value="${art.description}"/></h4>
+	 		
 	 	</div>
 	 </div>
 </body>
