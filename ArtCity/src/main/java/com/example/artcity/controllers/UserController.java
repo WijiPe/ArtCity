@@ -17,51 +17,48 @@ import com.example.artcity.services.UserService;
 
 @Controller
 public class UserController {
-	
+
 	@Autowired
 	private UserService userService;
-	
+
 	@GetMapping("/login")
 	public String login(HttpSession session, Model model) {
-		if (session.getAttribute("user_id") != null) {
-				return "redirect: /welcome";
-	}
+		if (session.getAttribute("userId") != null) {
+			return "redirect: /welcome";
+		}
 		model.addAttribute("newUser", new User());
 		model.addAttribute("newLogin", new LoginUser());
 		return "login.jsp";
 	}
-	
+
 	@PostMapping("/login")
-    public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin,
-            BindingResult result, Model model, HttpSession session) {
-        User user = userService.login(newLogin, result);
-        if (result.hasErrors()) {
-            model.addAttribute("newUser", new User());
-            return "login.jsp";
-        }
-        session.setAttribute("user", user);
-        return "dashboard.jsp";
-    }
-	
+	public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, Model model,
+			HttpSession session) {
+		User user = userService.login(newLogin, result);
+		if (result.hasErrors()) {
+			model.addAttribute("newUser", new User());
+			return "login.jsp";
+		}
+		session.setAttribute("userId", user.getId());
+		return "redirect:/dashboard";
+	}
+
 	@GetMapping("/register")
-	public String registration( Model model) {
+	public String registration(Model model) {
 		model.addAttribute("newUser", new User());
 		return "register.jsp";
 	}
-	
+
 	@PostMapping("/register")
-	public String register(@Valid @ModelAttribute("newUser") User newUser, BindingResult result, Model model, HttpSession session) {
+	public String register(@Valid @ModelAttribute("newUser") User newUser, BindingResult result, Model model,
+			HttpSession session) {
 		userService.register(newUser, result);
-		if ( result.hasErrors()) {
+		if (result.hasErrors()) {
 			model.addAttribute("newlogin", new LoginUser());
 			return "register.jsp";
 		}
-			session.setAttribute("newUser", newUser);
-			return "dashboard.jsp";
+		session.setAttribute("newUser", newUser);
+		return "redirect:/dashboard";
 	}
-	
 
 }
-
-
-

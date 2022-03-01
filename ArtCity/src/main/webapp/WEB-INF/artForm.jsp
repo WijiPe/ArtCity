@@ -78,6 +78,8 @@
 		
 		<form:hidden path="artwork" value="${art.artwork}" />
 		
+		<form:hidden path="artist" value="${userId}" />
+		
 		<h5>Art Name</h5>
 
 			<form:input class="inputtext" path="name" type="text" id="name" name="name"/>
