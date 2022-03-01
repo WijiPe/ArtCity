@@ -69,6 +69,10 @@ form.active{
 	border: solid 0.5px rgba(196, 190, 190, 0.301);
 }
 
+.logo{
+	margin-left:20px;
+}
+
 .search{
 	width: 500px;
     height: 40px;
@@ -77,6 +81,7 @@ form.active{
     border: solid 0.5px rgba(196, 190, 190, 0.301);
     font-family:'Comfortaa';
     padding:10px;
+    margin-left:300px;
 }
 
 .search:focus{
@@ -88,7 +93,7 @@ form.active{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 350px;
+	width: 500px;
 }
 
 
