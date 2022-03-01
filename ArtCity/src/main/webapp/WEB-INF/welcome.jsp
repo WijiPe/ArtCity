@@ -18,7 +18,7 @@
 </head>
 <body>
 	<div class="topnav">
-		<div>
+		<div class="logo">
 			<img src="images/Free_Sample_By_Wix.jpg" alt="ArtCityLogo" width="200" height="80">
 		</div>
 		<form onsubmit="event.preventDefault();" role="search">
@@ -29,12 +29,19 @@
   				<a href="#" class="dropbtn">Explore</a>
   				<div class="dropdown-content">
   					<a href="#">Sport</a>
-  					<a href="#">Art</a>
+  					<a href="#">People</a>
   					<a href="#">Abstract</a>
+  					<a href="#">Digital</a>
+  					<a href="#">Anime</a>
   				</div>
   			</div>
   			<a  class="active" href="/art-city/create-art">Create</a>
-  			<a class="active" href="#news"><img src="images/login.png" alt="User Logo" width="40" height="40"></a>
+  			<div class="dropdown">
+  				<a href="#" ><img src="images/login.png"alt="User Logo" width="40" height="40"></a>
+  				<div class="dropdown-content">
+  					<a href="#">Log out</a>
+  				</div>
+	 		</div>
 	 	</div>
 	 </div>
 	

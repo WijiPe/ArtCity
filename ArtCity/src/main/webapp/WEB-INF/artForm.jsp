@@ -16,9 +16,18 @@
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <title>Create Image Form</title>
 </head>
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
 <body>
 	<div class="topnav">
-		<div>
+		<div class="logo">
 			<img src="/images/Free_Sample_By_Wix.jpg" alt="Art City Logo" width="200" height="80"/>
 		</div>
 		<form onsubmit="event.preventDefault();" role="search">
@@ -29,30 +38,38 @@
   				<a href="#" class="dropbtn">Explore</a>
   				<div class="dropdown-content">
   					<a href="#">Sport</a>
-  					<a href="#">Art</a>
+  					<a href="#">People</a>
   					<a href="#">Abstract</a>
+  					<a href="#">Digital</a>
+  					<a href="#">Anime</a>
   				</div>
   			</div>
   			<a  class="active" href="#news">Create</a>
-  			<a class="active" href="#news"><img src="/images/login.png" alt="User Logo" width="40" height="40"/></a>
+  			<div class="dropdown">
+  				<a href="#" ><img src="/images/login.png"alt="User Logo" width="40" height="40"></a>
+  				<div class="dropdown-content">
+  					<a href="#">Log out</a>
+  				</div>
+	 		</div>
 	 	</div>
 	 </div>
 	 
 	 <div class="main">
-	  	<h1>Create New Art</h1>
-	 	<h5 class="middle">Upload Art</h5>
+	  	<h1 class="middle">Create New Art</h1>
+	 	<h5>Upload Art</h5>
 	 	
 	 	<form action="/uploadFile" method="post" enctype="multipart/form-data">
   			
   			<div class="container">
+  			<img id="output" width="200" height="200"/><br><br>
      			<div class="button-wrap">
         			<label  class="button" for="upload">Upload Art</label>
-        			<input  id="upload" type="file" name="file" accept="image/png, image/jpeg">
+        			<input  id="upload" type="file" name="file" accept="image/png, image/jpeg" onchange="loadFile(event)">
+      				<button class="save">save</button>
       			</div>
-      			<br><br>
-      			<img id="thumbnail" alt="Art Preview" width="200" height="200">
+      			
     		</div>
-			<button>save</button>
+			
 	 	</form>	
 	 	
 	 	<p>${newName}</p>
@@ -61,32 +78,31 @@
 		
 		<form:hidden path="artwork" value="${art.artwork}" />
 		
-		<h5 class="middle">Art Name</h5>
-			<form:label path="name" for="name">Art Name:</form:label>
-			<form:input path="name"  type="text" id="name" name="name"/><br><br>
-		<h5 class="middle">Description</h5>
- 			 <form:label path="description" for="description">Description:</form:label>
-			<form:input path="description" type="textarea" id="description" name="description"/>
+		<h5>Art Name</h5>
+
+			<form:input class="inputtext" path="name" type="text" id="name" name="name"/>
 			<br><br>
-		<h5 class="middle">Set Price</h5>
-			<form:label path="price" for="price">Description:</form:label>
-			<form:input path="price" type="number" id="price" name="price"/>
+		<h5>Description</h5>
+
+			<form:input class="inputtext" path="description" type="textarea" id="description" name="description"/>
+			<br><br>
+		<h5>Set Price</h5>
+
+			<form:input class="inputtext" path="price" type="number" id="price" name="price"/>
 			<br><br>
   			
-		<h5 class="middle">Category</h5>
-  			<form:label path="category">Add Category:</form:label>
-	 		<form:select path="category">
+		<h5>Category</h5>
+
+	 		<form:select path="category" class="inputtext">
 		  		<option value="Sport">Sport</option>
 		  		<option value="People">People</option>
 		  		<option value="Digital Art">Digital Art</option>
 		  		<option value="Abstract">Abstract</option>
 		  		<option value="Anime">Anime</option>
-	  		</form:select>	
-			<button>Create</button>
+	  		</form:select><br><br>	
+			<button class="createbtn">Create</button>
 		</form:form>
-	 	
-	 	
-	 </div>
-	
+
+	 </div>	
 </body>
 </html>
