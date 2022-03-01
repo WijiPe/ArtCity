@@ -14,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -99,9 +100,13 @@ public class HomeController {
 		return "profilePage.jsp";
 	}
 	
-	@GetMapping("/artDetails")
-	public String artDetails(Model model) {
-		
+	@GetMapping("/artDetails/{id}")
+	public String artDetails(@PathVariable("id")Long id, Model model, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/login";
+		}
+		Art art = artService.oneArt(id);
+		model.addAttribute("art", art);
 		return "artDetails.jsp";
 	}
 

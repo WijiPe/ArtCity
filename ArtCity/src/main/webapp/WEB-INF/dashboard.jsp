@@ -11,8 +11,7 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="/css/dashboard.css" />
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Comfortaa">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -41,19 +40,28 @@
 			<h1>Explore Collections</h1>
 		</div>
 		<div class="tabs d-flex justify-content-around m-3 border-bottom">
-			<a href="#" class="text-dark mt-3  text-decoration-none">Trending</a> 
+			<a href="#" class="text-dark mt-3 text-decoration-none">Trending</a> 
 			<a href="#" class="text-dark mt-3 text-decoration-none">Most Expensive</a> 
 			<a href="#" class="text-dark mt-3 text-decoration-none">Top Sellers</a> 
 			<a href="#" class="text-dark mt-3 text-decoration-none">Collectibles</a>
 		</div>
+<<<<<<< HEAD
 		<div class="pageContents">
 
+=======
+		<div class="pageContents d-flex m-3">
+>>>>>>> 19551046eb037ed4f5a36d1c986b7d379c303aca
 			<!-- 	made few templates for cards  -->
 			<!-- This is the card which looks like the one on welcome page of openseas -->
 			<c:forEach var="art" items="${allArts}">
 				<div class="card">
 					<div class="card_header">
+<<<<<<< HEAD
 						<img class="card-img-top" src="${art.artwork}" alt="Problem Loading Page">
+=======
+						<a href="artDetails/${art.id} "><img class="card-img-top" src="${art.artwork}"
+							alt="Problem Loading Page" style="width: 100%" height="250"></a>
+>>>>>>> 19551046eb037ed4f5a36d1c986b7d379c303aca
 					</div>
 					<div
 						class="card-footer d-flex justify-content-between align-items-center">

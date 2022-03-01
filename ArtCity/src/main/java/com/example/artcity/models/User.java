@@ -54,7 +54,10 @@ public class User {
     private List<Art> nfts;
     
   
-    public User() {}
+	public User() {
+		super();
+		this.wallet = 1000.00;
+	}
 
 
 	public Long getId() {

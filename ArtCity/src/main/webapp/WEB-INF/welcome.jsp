@@ -35,7 +35,7 @@
   					<a href="#">Anime</a>
   				</div>
   			</div>
-  			<a  class="active" href="/art-city/create-art">Create</a>
+  			<a  class="active" href="/create-art">Create</a>
   			<div class="dropdown">
   				<a href="#" ><img src="images/login.png"alt="User Logo" width="40" height="40"></a>
   				<div class="dropdown-content">
