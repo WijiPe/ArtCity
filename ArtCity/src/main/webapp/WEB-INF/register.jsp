@@ -17,18 +17,16 @@
 <meta charset="UTF-8">
 <title>Register</title>
 
-<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/register.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
 <!-- change to match your file/naming structure -->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <body>
-	<div class="container p-5">
-		<div class="card mx-auto p-4 rounded-0">
-			<h1 class="mb-4 log-reg">Become a new User!</h1>
-
-			<div class="d-flex align-items-start justify-content-around">
-				<div class="mb-3 register">
+<div class="container" onclick="onclick">
+  <div class="top"></div>
+  <div class="bottom"></div>
+  <div class="center">
 					<h2>Register</h2>
 					<form:form action="/register" method="POST"
 						modelAttribute="newUser">
@@ -62,11 +60,11 @@
 							<form:input type="password" class="form-control"
 								id="inputPassword" path="confirm" />
 						</div>
-						<input type="submit" value="Register">
+								<button class="noselect" type = "submit" value = "Register"></button>
+
 					</form:form>
-				</div>
-			</div>
-		</div>
-	</div>
+				  </div>
+</div>
+	
 </body>
 </html>

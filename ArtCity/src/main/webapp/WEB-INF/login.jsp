@@ -17,16 +17,20 @@
 <meta charset="UTF-8">
 <title>Log In</title>
 
-<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/login.css"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
 <!-- change to match your file/naming structure -->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <body>
 
-	<div class="mb-3 login">
-		<h2>Log in</h2>
-		<form:form action="/login" method="POST" modelAttribute="newLogin">
+<div class="container" onclick="onclick">
+  <div class="top"></div>
+  <div class="bottom"></div>
+  <div class="center">
+    <h2>Please Sign In</h2>
+
+				<form:form action="/login" method="POST" modelAttribute="newLogin">
 			<div class="mb-3 row">
 				<form:label path="email" for="formInput"
 					class="col-sm-4 col-form-label">Email</form:label>
@@ -41,8 +45,14 @@
 				<form:input type="password" class="form-control" id="inputPassword"
 					path="password" />
 			</div>
-			<input type="submit" value="Login">
+		
+
+		<button class="noselect" type = "submit" value = "Login"></button>
 		</form:form>
-	</div>
+
+    <h2>&nbsp;</h2>
+  </div>
+</div>
+	
 </body>
 </html>
