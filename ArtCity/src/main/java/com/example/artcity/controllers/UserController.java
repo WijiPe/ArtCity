@@ -24,7 +24,7 @@ public class UserController {
 	@GetMapping("/login")
 	public String login(HttpSession session, Model model) {
 		if (session.getAttribute("userId") != null) {
-			return "redirect: /welcome";
+			return "redirect:/dashboard";
 		}
 		model.addAttribute("newUser", new User());
 		model.addAttribute("newLogin", new LoginUser());

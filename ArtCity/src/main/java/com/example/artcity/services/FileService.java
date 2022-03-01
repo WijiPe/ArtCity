@@ -15,17 +15,18 @@ import com.example.artcity.models.FileStorageException;
 @Service
 public class FileService {
 
-    @Value("arts")
+    @Value("/arts")
     public String uploadDir;
 
     public Path uploadFile(MultipartFile file, String newName) {
     	
         try {
-            Path copyLocation = Paths
-                .get(uploadDir + File.separator + StringUtils.cleanPath(newName));
+            Path copyLocation = Paths.get(uploadDir + File.separator + StringUtils.cleanPath(newName));
             System.out.println(copyLocation);
-            
-            Files.copy(file.getInputStream(), copyLocation, StandardCopyOption.REPLACE_EXISTING);
+            Path appendPath=Paths.get("src/main/webapp/");
+            String finalPathString=appendPath.toString()+copyLocation.toString();
+            Path finalPath=Paths.get(finalPathString);
+            Files.copy(file.getInputStream(), finalPath, StandardCopyOption.REPLACE_EXISTING);
             return copyLocation;
         } catch (Exception e) {
             e.printStackTrace();
