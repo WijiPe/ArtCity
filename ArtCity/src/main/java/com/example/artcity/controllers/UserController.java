@@ -64,5 +64,11 @@ public class UserController {
 		return "redirect:/dashboard";
 	}
 
-
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+    	session.invalidate();
+    	return "redirect:/";
+    }
+ // 		<a href="/logout"> Logout</a> add to pages that need logout function
+	
 }

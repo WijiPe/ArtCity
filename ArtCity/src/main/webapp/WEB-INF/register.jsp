@@ -60,7 +60,10 @@
 							<form:input type="password" class="form-control"
 								id="inputPassword" path="confirm" />
 						</div>
+						<div>
 								<button class="noselect" type = "submit" value = "Register"></button>
+								<p>Already a member? <a href="/login">Login</a></p>
+						</div>
 
 					</form:form>
 				  </div>
