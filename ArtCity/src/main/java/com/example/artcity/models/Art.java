@@ -1,5 +1,6 @@
 package com.example.artcity.models;
 
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -33,9 +34,15 @@ public class Art {
     @Size(min=3, max=30, message="Name must be between 3 and 30 characters")
     private String name;
     
+    @NotEmpty(message="Art is required!")
+    private String artwork;
+    
     @NotEmpty(message="Description is required!")
     @Size(min=3, max=30, message="Description must be between 3 and 30 characters")
     private String description;
+    
+    @NotEmpty(message="category is required!")
+    private String category;
     
     @NotNull
     @Positive(message="Amount must be at greater than 0.")
@@ -48,6 +55,8 @@ public class Art {
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="collector_id")
     private User collector;
+	
+
     
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -75,11 +84,23 @@ public class Art {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getArtwork() {
+		return artwork;
+	}
+	public void setArtwork(String artwork) {
+		this.artwork = artwork;
+	}
 	public String getDescription() {
 		return description;
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	public Double getPrice() {
 		return price;
@@ -111,8 +132,6 @@ public class Art {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-    
-    
-
+	
 
 }

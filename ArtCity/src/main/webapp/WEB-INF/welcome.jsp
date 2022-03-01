@@ -22,19 +22,18 @@
 			<img src="images/Free_Sample_By_Wix.jpg" alt="ArtCityLogo" width="200" height="80">
 		</div>
 		<form onsubmit="event.preventDefault();" role="search">
-  			<input class="search" type="search" placeholder="Search items, collections, and accounts" autofocus required  />  
+  			<input class="search" type="search" placeholder="Search items, collections, and accounts"  />  
 		</form>
 		<div class="link">
 			<div class="dropdown">
-  				<span>Explore</span>
+  				<a href="#" class="dropbtn">Explore</a>
   				<div class="dropdown-content">
-  					<p>Hello World!</p>
-  					<p>Hello World!</p>
-  					<p>Hello World!</p>
+  					<a href="#">Sport</a>
+  					<a href="#">Art</a>
+  					<a href="#">Abstract</a>
   				</div>
   			</div>
-  			<a class="active" href="#news">Explore</a>
-  			<a class="active" href="#news">Create</a>
+  			<a  class="active" href="/art-city/create-art">Create</a>
   			<a class="active" href="#news"><img src="images/login.png" alt="User Logo" width="40" height="40"></a>
 	 	</div>
 	 </div>
