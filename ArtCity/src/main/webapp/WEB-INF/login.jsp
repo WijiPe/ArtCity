@@ -45,9 +45,9 @@
 				<form:input type="password" class="form-control" id="inputPassword"
 					path="password" />
 			</div>
-		
 
 		<button class="noselect" type = "submit" value = "Login"></button>
+
 		</form:form>
 
     <h2>&nbsp;</h2>
