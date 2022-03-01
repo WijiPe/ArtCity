@@ -149,8 +149,12 @@ public class User {
 		this.nfts = nfts;
 	}
 
+    public void doTransactionBuy(Double amount) {
+    	this.wallet -= amount;
+    }
     
-    
-
+	public void doTransactionSell(Double amount) {
+		 this.wallet += amount;
+	 }
 
 }
