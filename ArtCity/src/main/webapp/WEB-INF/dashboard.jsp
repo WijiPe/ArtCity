@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <%@ page isErrorPage="true"%>
 <!DOCTYPE html>
 <html>
@@ -52,7 +53,7 @@
 			<div class="card ml-3" style="width: 300px">
 				<div class="card_header">
 					<img class="card-img-top" src="images/art_sample.png"
-						alt="Problem Loading Page" style="width: 100%" height="150">
+						alt="Problem Loading Page" style="width: 100%" height="250">
 				</div>
 				<div
 					class="card-footer d-flex justify-content-between align-items-center">
