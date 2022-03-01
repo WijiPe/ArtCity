@@ -1,8 +1,8 @@
 package com.example.artcity.controllers;
 
-import java.util.Random;
-
 import java.nio.file.Path;
+import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -74,12 +75,16 @@ public class HomeController {
 			return "artForm.jsp";
 		} else {
 			artService.createArt(art);
-			return "redirect:/create-art";
+			System.out.println("Saved Art");
+			return "redirect:/dashboard";
 		}
 	}
 	
 	@GetMapping("/dashboard")
 	public String dashboard(Model model) {
+		System.out.println("Before DB call");
+		List<Art> allArts=artService.findAllArt();
+		model.addAttribute("allArts", allArts);
 		return "dashboard.jsp";
 	}
 	

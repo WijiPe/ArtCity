@@ -17,7 +17,7 @@ public class ArtService {
 	@Autowired
 	private ArtRepository artRepository;
 	
-	public List<Art> allCatagorys(){
+	public List<Art> findAllArt(){
 		return artRepository.findAll();
 	}
 	
