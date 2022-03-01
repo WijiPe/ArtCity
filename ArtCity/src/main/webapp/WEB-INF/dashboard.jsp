@@ -31,9 +31,9 @@
 					required />
 			</form>
 			<div class="link">
-				<a class="active" href="#news">Explore</a> <a class="active"
-					href="#news">Create</a> <a class="active" href="#news"><img
-					src="images/login.png" alt="User Logo" width="40" height="40"></a>
+				<a class="active" href="#news">Explore</a> 
+				<a class="active" href="/create-art">Create</a> 
+				<a class="active" href="#news"><img src="images/login.png" alt="User Logo" width="40" height="40"></a>
 			</div>
 		</div>
 
@@ -41,10 +41,10 @@
 			<h1>Explore Collections</h1>
 		</div>
 		<div class="tabs d-flex justify-content-around m-3 border-bottom">
-			<a href="#" class="text-dark mt-3  text-decoration-none">Trending</a> <a href="#"
-				class="text-dark mt-3 text-decoration-none">Most Expensive</a> <a href="#"
-				class="text-dark mt-3 text-decoration-none">Top Sellers</a> <a href="#"
-				class="text-dark mt-3 text-decoration-none">Collectibles</a>
+			<a href="#" class="text-dark mt-3  text-decoration-none">Trending</a> 
+			<a href="#" class="text-dark mt-3 text-decoration-none">Most Expensive</a> 
+			<a href="#" class="text-dark mt-3 text-decoration-none">Top Sellers</a> 
+			<a href="#" class="text-dark mt-3 text-decoration-none">Collectibles</a>
 		</div>
 		<div class="pageContents">
 

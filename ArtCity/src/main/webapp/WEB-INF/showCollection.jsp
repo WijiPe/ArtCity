@@ -35,9 +35,9 @@
 				required />
 		</form>
 		<div class="link">
-			<a class="active" href="#news">Explore</a> <a class="active"
-				href="#news">Create</a> <a class="active" href="#news"><img
-				src="images/login.png" alt="User Logo" width="40" height="40"></a>
+			<a class="active" href="#news">Explore</a> 
+			<a class="active" href="#news">Create</a> 
+			<a class="active" href="#news"><img src="images/login.png" alt="User Logo" width="40" height="40"></a>
 		</div>
 	</div>
 	<!-- 	<div class="container"> -->
@@ -93,9 +93,8 @@
 						<div id='mouse_over'>
 							<a href="#">Buy Now</a>
 						</div>
-						
-						<a href="#" class="fav">
-						<!-- <img  alt="fav_logo" src="images/favLogo.png" height="30"
+
+						<a href="#" class="fav"> <!-- <img  alt="fav_logo" src="images/favLogo.png" height="30"
 							width="30"> -->
 						</a>
 					</div>

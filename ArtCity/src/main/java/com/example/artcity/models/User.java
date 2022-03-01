@@ -36,8 +36,7 @@ public class User {
     @Size(min=8, max=128, message="Password must be between 8 and 128 characters")
     private String password;
     
-    @NotEmpty(message="About Me is required!")
-    @Size(min=3, max=30, message="About Me must be between 3 and 30 characters")
+   
     private String description;
     
     @Min(0)
