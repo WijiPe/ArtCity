@@ -20,8 +20,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.artcity.models.Art;
+import com.example.artcity.models.User;
 import com.example.artcity.services.ArtService;
 import com.example.artcity.services.FileService;
+import com.example.artcity.services.UserService;
 
 @Controller
 public class HomeController {
@@ -31,6 +33,9 @@ public class HomeController {
 
 	@Autowired
 	ArtService artService;
+	
+	@Autowired
+	UserService userService;
 
 	@GetMapping("/")
 	public String welcome(Model model) {
@@ -94,10 +99,26 @@ public class HomeController {
 		return "showCollection.jsp";
 	}
 	
-	@GetMapping("/profilePage")
-	public String profilePage(Model model) {
-		
-		return "profilePage.jsp";
+	@GetMapping("/profilePageMain/{userid}")
+	public String profilePageMain(@PathVariable("userid")Long id, Model model, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/login";
+		}
+//		List<Art> arts = artService.findByArtist(id);
+		User user = userService.findUser((Long)session.getAttribute("userId"));
+//		model.addAttribute("arts", arts);
+		model.addAttribute("user", user);
+		return "profilePageMain.jsp";
+	}
+	
+	@GetMapping("/profilePageCreated/{userid}")
+	public String profilePageCreated(@PathVariable("userid")Long id, Model model, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/login";
+		}
+		User user = userService.findUser((Long)session.getAttribute("userId"));
+		model.addAttribute("user", user);
+		return "profilePageCreated.jsp";
 	}
 	
 	@GetMapping("/artDetails/{id}")

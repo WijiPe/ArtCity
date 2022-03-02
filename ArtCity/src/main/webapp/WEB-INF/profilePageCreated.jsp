@@ -18,7 +18,7 @@
 <title>Welcome Page</title>
 </head>
 <body>
-	
+
 	<div class="topnav">
 		<div class="logo">
 			<img src="/images/Free_Sample_By_Wix.jpg" alt="Art City Logo" width="200" height="80"/>
@@ -57,6 +57,7 @@
 			<p><c:out value="${user.description}"/></p>
 			<p>Email: <c:out value="${user.email}"/></p>
 			<p>Wallet: <c:out value="${user.wallet}" />Dojos</p>
+			
 		</div>
 		<div class="user_tabs d-flex justify-content-around m-3 border-bottom" class="border">
 			<a href="/profilePageMain/${userId}" class="text-dark mt-3  text-decoration-none">Collected</a> 
@@ -64,12 +65,14 @@
 			<a href="#"class="text-dark mt-3 text-decoration-none">Favorited</a>
 		</div>
 	<div class="user_nfts">
-		<c:forEach var="art" items="${user.nfts}">
+		<c:forEach var="art" items="${user.arts}">
 		<div class="card" style="width: 300px">
 				<div class="card_header">
 					<a href="/artDetails/${art.id}" ><img class="card-img-top" src="${art.artwork}" alt="Problem Loading Page" style="width: 100%" height="250"></a>
 				</div>
-				<div class="card-footer d-flex justify-content-between align-items-center">
+				<div
+					class="card-footer d-flex justify-content-between align-items-center">
+
 					<div class="detail">
 						<div>
 							<p class="card-text">${art.artist.userName}</p>
