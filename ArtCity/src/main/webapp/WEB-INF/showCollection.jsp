@@ -94,8 +94,7 @@
 							<a href="#">Buy Now</a>
 						</div>
 
-						<a href="#" class="fav"> <!-- <img  alt="fav_logo" src="images/favLogo.png" height="30"
-							width="30"> -->
+						<a href="#" class="fav"> 
 						</a>
 					</div>
 				</div>

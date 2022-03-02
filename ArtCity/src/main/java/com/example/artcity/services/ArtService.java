@@ -21,6 +21,14 @@ public class ArtService {
 		return artRepository.findAll();
 	}
 	
+	public Art findArtById(Long id){
+		Optional<Art> optArt=artRepository.findById(id);
+		if(optArt.isPresent()) {
+			return optArt.get();
+		}
+		return null;
+	}
+	
 	public Art oneArt(Long id) {
 		Optional<Art> optionalArt = artRepository.findById(id);
 		if(optionalArt.isPresent()) {

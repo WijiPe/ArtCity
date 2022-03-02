@@ -69,6 +69,6 @@ public class UserController {
     	session.invalidate();
     	return "redirect:/";
     }
- // 		<a href="/logout"> Logout</a> add to pages that need logout function
+ 
 	
 }
