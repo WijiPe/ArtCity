@@ -41,5 +41,9 @@ public class ArtService {
 	public void deleteArt(Long id) {
 		artRepository.deleteById(id);
 	}
-
+	
+	public List<Art> findByArtist(Long id){
+		return artRepository.findByArtist(id);
+	}
+		
 }

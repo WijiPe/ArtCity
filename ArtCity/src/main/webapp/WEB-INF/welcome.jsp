@@ -17,6 +17,7 @@
 <title>Welcome Page</title>
 </head>
 <body>
+
 	<div class="topnav">
 		<div class="logo">
 			<img src="images/Free_Sample_By_Wix.jpg" alt="ArtCityLogo" width="200" height="80">
@@ -39,6 +40,7 @@
   			<div class="dropdown">
   				<a href="#" ><img src="images/login.png"alt="User Logo" width="40" height="40"></a>
   				<div class="dropdown-content">
+  					<a href="/register">Register</a>
   					<a href="/logout">Log out</a>
   				</div>
 	 		</div>
@@ -58,6 +60,6 @@
 		<div class="try">
 		</div>
 	</div>
-	
+
 </body>
 </html>
