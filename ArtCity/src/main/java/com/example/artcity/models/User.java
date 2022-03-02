@@ -46,12 +46,12 @@ public class User {
     @NotEmpty(message="Confirm Password is required!")
     @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
     private String confirm;
-    
+    //user created arts
     @OneToMany(mappedBy="artist", fetch = FetchType.LAZY)
     private List<Art> arts;
-    
+    //User collected/ purchased arts
 	@OneToMany(mappedBy="collector", fetch = FetchType.LAZY)
-    private List<Art> nfts;
+    private List<Art> nfts; 
     
   
 	public User() {
@@ -139,11 +139,34 @@ public class User {
 		this.arts = arts;
 	}
 
-
+	public void addArtTocollection(Art art) {
+		this.arts.add(art);
+	}
+	
+	public void sellArt(Art art) {
+		for(int i=0;i<this.arts.size();i++) {
+			if(arts.get(i).getId() == art.getId()) {
+				this.arts.remove(i);
+			}
+		}
+		
+	}
+	
 	public List<Art> getNfts() {
 		return nfts;
 	}
-
+	
+	public void addNftTocollection(Art art) {
+		this.nfts.add(art);
+	}
+	
+	public void removeNftFromcollection(Art art) {
+		for(int i=0;i<this.nfts.size();i++) {
+			if(arts.get(i).getId() == art.getId()) {
+				this.arts.remove(i);
+			}
+		}
+	}
 
 	public void setNfts(List<Art> nfts) {
 		this.nfts = nfts;

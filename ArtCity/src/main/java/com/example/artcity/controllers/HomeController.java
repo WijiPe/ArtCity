@@ -147,4 +147,11 @@ public class HomeController {
 		return "artDetails.jsp";
 	}
 
+	@GetMapping("/art/buy/{id}")
+	public String buyArt(@PathVariable("id") Long id, HttpSession session) {
+		Art artToBuy=artService.findArtById(id);
+		User user=userService.findUser((Long)session.getAttribute("userId"));
+//		user.g
+		return null;
+	}
 }
