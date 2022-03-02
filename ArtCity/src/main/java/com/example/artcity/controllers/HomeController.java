@@ -120,9 +120,7 @@ public class HomeController {
 		if(session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
-//		List<Art> arts = artService.findByArtist(id);
 		User user = userService.findUser((Long)session.getAttribute("userId"));
-//		model.addAttribute("arts", arts);
 		model.addAttribute("user", user);
 		return "profilePageMain.jsp";
 	}

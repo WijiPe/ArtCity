@@ -24,6 +24,7 @@ body {
   font-family:'Comfortaa';
   display:flex;
   position:relative;
+  box-shadow: 5px 5px 5px 2px rgba(177, 173, 173, 0.295);
   
 }
 
