@@ -60,7 +60,7 @@ public class UserController {
 			return "register.jsp";
 		}
 
-		session.setAttribute("newUser", newUser);
+		session.setAttribute("userId", newUser.getId());
 		return "redirect:/dashboard";
 	}
 

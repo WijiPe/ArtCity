@@ -83,10 +83,26 @@ public class HomeController {
 	
 	@GetMapping("/dashboard")
 	public String dashboard(Model model) {
-		System.out.println("Before DB call");
 		List<Art> allArts=artService.findAllArt();
 		model.addAttribute("allArts", allArts);
+	
 		return "dashboard.jsp";
+	}
+	
+	@GetMapping("/dashboard/mostExpensive")
+	public String mostExpensive(Model model) {
+		List<Art> allArts=artService.findAllArt();
+		model.addAttribute("allArts", allArts);
+		model.addAttribute("price", 1000.0);
+		return "mostExpensive.jsp";
+	}
+	
+	@GetMapping("/dashboard/query")
+	public String dashboardQuery(@RequestParam("query")String query, Model model) {
+		List<Art> allArts=artService.findAllArt();
+		model.addAttribute("allArts", allArts);
+		model.addAttribute("query", query);
+		return "dashboardQuery.jsp";
 	}
 	
 	@GetMapping("/showCollection")
