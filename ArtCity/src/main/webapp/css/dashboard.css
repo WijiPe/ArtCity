@@ -63,17 +63,17 @@ body{
     font-family:'Comfortaa';
 }
 
+
 .pageContents{
+	flex-direction:row;
 	display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
+   	flex-wrap:wrap;
+    justify-content:space-around;
+    overflow: auto;
+} 
 
 .card{
-	width:300px;
+	 width:400px;
 	margin:15px
-}
-.card >img{
-	width:300px;
-	height:250px
+	
 }
