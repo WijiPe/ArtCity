@@ -24,6 +24,7 @@ body {
   	font-family:'Comfortaa';
   	display:flex;
   	position:relative;
+  	box-shadow: 5px 5px 5px 2px rgba(177, 173, 173, 0.295);
 
 }
 
@@ -64,13 +65,7 @@ body {
  	border: solid 0.5px rgba(196, 190, 190, 0.301);
 
 }
-form.active{
-	color: rgba(177, 173, 173, 0.295);
-	border: solid 0.5px rgba(196, 190, 190, 0.301);
-}
-.logo{
-	margin-left:20px;
-}
+
 
 .search{
 	width: 500px;
@@ -157,9 +152,6 @@ form.active{
   
 }
 
-.border{
-	font-weight:bolder;
-}
 
 .image_placeHolder{
     display: flex;
@@ -180,6 +172,7 @@ form.active{
 	width: 150px;
 	
 }
+
 .user_nfts{
 	margin-left: 20px;
 	display:flex;
@@ -196,13 +189,10 @@ form.active{
 	
 }
 
-
-
 .card{
 	transition: all .2s ease-in-out;
 	border-radius: 1em 1em;
-	
-	
+
 }
 .card:hover, .card:focus{
 	box-shadow: 1 1em 1em -0.1em var(--hover) black ;

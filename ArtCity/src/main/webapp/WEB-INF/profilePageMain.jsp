@@ -30,6 +30,7 @@
 			<div class="dropdown">
   				<a href="#" class="dropbtn">Explore</a>
   				<div class="dropdown-content">
+  					<a href="/dashboard">All Arts</a>
   					<a href="#">Sport</a>
   					<a href="#">People</a>
   					<a href="#">Abstract</a>
@@ -41,6 +42,7 @@
   			<div class="dropdown">
   				<img src="/images/login.png"alt="User Logo" width="40" height="40">
   				<div class="dropdown-content">
+  					<a href="/profilePageMain/${userId} ">Profile</a>
   					<a href="/logout">Log out</a>
   				</div>
 	 		</div>
