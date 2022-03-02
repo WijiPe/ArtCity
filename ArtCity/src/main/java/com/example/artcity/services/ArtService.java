@@ -53,5 +53,8 @@ public class ArtService {
 	public List<Art> findByArtist(Long id){
 		return artRepository.findByArtist(id);
 	}
-		
+	
+	public List<Art> findAllToSale(){
+		return artRepository.findByCollectorIsNull();
+	}
 }

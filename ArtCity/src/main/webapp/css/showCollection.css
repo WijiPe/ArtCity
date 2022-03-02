@@ -156,11 +156,11 @@ ul ul a {
   display: none;
 }
 
-#mouse_over {
+.card_footer {
   opacity: 0;
 }
 
-#mouse_over:hover {
+.card_footer:hover {
   opacity: 1;
   color:blue;
   font-weight: bold;
