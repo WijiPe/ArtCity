@@ -19,7 +19,6 @@
 <title>Welcome Page</title>
 </head>
 <body>
-	<div class="container mt-3">
 		<div class="topnav">
 			<div>
 				<img src="/images/Free_Sample_By_Wix.jpg" alt="ArtCityLogo"
@@ -98,8 +97,6 @@
 				</c:if>
 			</c:forEach>
 		</div>
-
-	</div>
 </body>
 </html>
 
