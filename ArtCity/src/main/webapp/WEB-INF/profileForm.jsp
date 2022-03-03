@@ -9,15 +9,23 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/css/artDetails.css"/>
+<link rel="stylesheet" href="/css/artForm.css"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-<title>Art Details Page</title>
+<title>Insert title here</title>
 </head>
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
 <body>
-
 	<div class="topnav">
 		<div class="logo">
 			<img src="/images/Free_Sample_By_Wix.jpg" alt="Art City Logo" width="200" height="80"/>
@@ -29,6 +37,7 @@
 			<div class="dropdown">
   				<a href="#" class="dropbtn">Explore</a>
   				<div class="dropdown-content">
+  					<a href="/dashboard">All Arts</a>
   					<a href="#">Sport</a>
   					<a href="#">People</a>
   					<a href="#">Abstract</a>
@@ -36,47 +45,52 @@
   					<a href="#">Anime</a>
   				</div>
   			</div>
-  			<a  class="active" href="/create-art">Create</a>
+  			<a  class="active" href="#news">Create</a>
   			<div class="dropdown">
   				<a href="#" ><img src="/images/login.png"alt="User Logo" width="40" height="40"></a>
   				<div class="dropdown-content">
-  					<a href="/logout">Log out </a>
+  					<a href="/profilePageMain/${userId} ">Profile</a>
+  					<a href="/logout">Log out</a>
   				</div>
 	 		</div>
 	 	</div>
 	 </div>
 	 
-<section class="product">
-	<div class="product__photo">
-		<div class="photo-container">
-			<div class="photo-main">
-				<div class="controls">
-					<span><c:out value="${art.name}"/></span>
-				</div>
-				<img src="${art.artwork}"alt="${art.name}">
-			</div>
-		</div>
-	</div>
-	<div class="product__info">
-		<div class="title">
-			<span style="color:blue;"><c:out value="${art.artist.userName}"/></span>
-			<h1><c:out value="${art.name}"/></h1>
-			<p >Owned By <span style="color:blue;"><c:out value="${art.collector.userName}"/></span></p>
-		</div>
-		<div class="price">
-			Price: <span><c:out value="${art.price}"/> Dojo Coins</span>
-		</div>
+	 <div class="main">
+	  	<h1 class="middle">Create Profile</h1>
+	 	<h5>Upload Profile</h5>
+	 	
+	 	<form action="/uploadProfilePicture" method="post" enctype="multipart/form-data">
+	 	
+  			
+  			<div class="container">
+  			<img id="output" width="200" height="200"/><br><br>
+     			<div class="button-wrap">
+        			<label  class="button" for="upload">Upload Profile Picture</label>
+        			<input  id="upload" type="file" name="file" accept="image/png, image/jpeg" onchange="loadFile(event)">
+      				<button class="save">save</button>
+      			</div>
+      			
+    		</div>
+			
+	 	</form>	
+	 	
+	 	
+	 	<form action="/submitProfileForm" method="post">
+	 	<input type="hidden" name="_method" value="put" />
+	 	
+		
 
-		<button type = "button" class="glow-on-hover">Buy Now</button>
-		<div class="description">
-			<h3>Description</h3>
+		
+		<h5>Description</h5>
 
-				<p><c:out value="${art.description}"/></p>
-				<p>Create By <span style="color:blue;"><c:out value="${art.artist.userName}"/></span></p>
+			<input class="inputtext" value="description" type="text" id="description" name="description"/>
+			<br><br>
 
-		</div>
-	</div>
-</section>
+			<button class="createbtn">Create</button>
+		</form>
+
+	 </div>	
 
 </body>
 </html>

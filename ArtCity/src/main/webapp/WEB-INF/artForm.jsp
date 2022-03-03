@@ -74,7 +74,7 @@
 			
 	 	</form>	
 	 	
-	 	<p>${newName}</p>
+
 	 	
 	 	<form:form action="/submitArtForm" method="post" modelAttribute="art">
 		

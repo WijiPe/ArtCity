@@ -17,7 +17,7 @@ public class FileService {
 
     @Value("/arts")
     public String uploadDir;
-
+    
     public Path uploadFile(MultipartFile file, String newName) {
     	
         try {
@@ -33,8 +33,27 @@ public class FileService {
             throw new FileStorageException("Could not store file " + newName
                 + ". Please try again!");
         }
+    }
+    
+    @Value("/profilepicture")
+    public String uploadProfilePicture;
         
-        
+    public Path uploadProfilePicture(MultipartFile file, String newName) {
+    	
+         try {
+             Path copyLocation = Paths.get(uploadProfilePicture + File.separator + StringUtils.cleanPath(newName));
+             System.out.println(copyLocation);
+             Path appendPath=Paths.get("src/main/webapp/");
+             String finalPathString=appendPath.toString()+copyLocation.toString();
+             Path finalPath=Paths.get(finalPathString);
+             Files.copy(file.getInputStream(), finalPath, StandardCopyOption.REPLACE_EXISTING);
+             return copyLocation;
+         } catch (Exception e) {
+             e.printStackTrace();
+             throw new FileStorageException("Could not store file " + newName
+                 + ". Please try again!");
+         }
+            
     }
     
     
