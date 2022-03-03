@@ -20,50 +20,34 @@
 <body>
 	<div class="topnav">
 		<div class="logo">
-			<img src="images/Free_Sample_By_Wix.jpg" alt="ArtCityLogo"
-				width="200" height="80">
+			<img src="/images/Free_Sample_By_Wix.jpg" alt="Art City Logo" width="200" height="80"/>
 		</div>
 		<form onsubmit="event.preventDefault();" role="search">
-			<input class="search" type="search"
-				placeholder="Search items, collections, and accounts" />
+  			<input class="search" type="search" placeholder="Search items, collections, and accounts"  />  
 		</form>
 		<div class="link">
 			<div class="dropdown">
-				<a href="#" class="dropbtn">Explore</a>
-				<div class="dropdown-content">
-					<a href="/dashboard">All Arts</a> <a href="#">Sport</a> <a href="#">People</a>
-					<a href="#">Abstract</a> <a href="#">Digital</a> <a href="#">Anime</a>
-				</div>
-				<a class="active" href="/create-art">Create</a>
-				<div class="dropdown">
-					<img src="images/login.png" alt="User Logo" width="40" height="40">
-					<div class="dropdown-content">
-
-						<a href="/dashboard">All Arts</a>
-  						<a href="#">Sport</a>
-  						<a href="#">People</a>
-  						<a href="#">Abstract</a>
-  						<a href="#">Digital Art</a>
-  						<a href="#">Anime</a>
-  					</div>
+  				<a href="#" class="dropbtn">Explore</a>
+  				<div class="dropdown-content">
+  					<a href="/dashboard">All Arts</a>
+  					<a href="#">Sport</a>
+  					<a href="#">People</a>
+  					<a href="#">Abstract</a>
+  					<a href="#">Digital</a>
+  					<a href="#">Anime</a>
   				</div>
-				<a class="active" href="/create-art">Create</a>
-				<div class="dropdown">
-					<img src="images/login.png" alt="User Logo" width="40" height="40">
-					<div class="dropdown-content">
-						<a href="/profilePageMain/${userId} ">Profile</a>
-  						<a href="/logout">Log out</a>
-  					</div>
+  			</div>
+  			<a  class="active" href="/create-art">Create</a>
+  			<div class="dropdown">
+  				<img src="/images/login.png"alt="User Logo" width="40" height="40">
+  				<div class="dropdown-content">
+  					<a href="/profilePageMain/${userId} ">Profile</a>
+  					<a href="/editProfile/${userId}">Edit</a>
+  					<a href="/logout">Log out</a>
   				</div>
-
-						<a href="/profilePageMain/${userId} ">Profile</a> 
-						<a href="/editProfile/${userId}">Edit</a>
-						<a href="/logout">Log out</a>
-					</div>
-				</div>
-
-			</div>
-		</div>	
+	 		</div>
+	 	</div>
+	 </div>
 		<div class="align-items-center text-center m-5">
 			<h1 class="fontweigth">Explore Collections</h1>
 		</div>
