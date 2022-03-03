@@ -85,13 +85,18 @@ public class UserService {
     }
 
     
-	public User updateUser(User user) {
-		return userRepository.save(user);
-	}
-	
+
+    public void updateUserWallet(Double amount,User seller, User buyer) {
+    	buyer.setWallet(buyer.getWallet()-amount);
+    	buyer.setConfirm("testTest");
+    	seller.setWallet(seller.getWallet()+amount);
+    	seller.setConfirm("testTest");
+    	userRepository.save(buyer);
+    	userRepository.save(seller);
+    }
+    
+
 	public void updateUserProfile(Long id, String description) {
 		userRepository.updateUser(id , description);
 	}
-
-	
 }

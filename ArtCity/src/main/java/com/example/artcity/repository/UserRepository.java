@@ -20,6 +20,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
 	@Modifying
 	@Query("update User u set u.description = :description where u.id = :id")
 	void updateUser(@Param(value = "id") Long id, @Param(value = "description") String description);
+
 }
 
 //@Param(value = "profilePicture") String profilePicture

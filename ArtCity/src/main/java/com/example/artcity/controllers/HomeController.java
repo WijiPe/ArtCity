@@ -202,12 +202,19 @@ public class HomeController {
 		Art artToBuy=artService.findArtById(id);
 		User buyer=userService.findUser((Long) session.getAttribute("userId"));
 		User seller=userService.findUser(artToBuy.getArtist().getId());
-		System.out.println("Art Name: "+ artToBuy.getName());
-		artToBuy.setCollector(buyer);
-		buyer.doTransactionBuy(artToBuy.getPrice());
+		userService.updateUserWallet(artToBuy.getPrice(), seller, buyer);
+//		buyer.setWallet(buyer.getWallet()-artToBuy.getPrice());
 //		userService.updateUser(buyer);
-		seller.doTransactionSell(artToBuy.getPrice());
+//	
+		//seller.setWallet(buyer.getWallet()+artToBuy.getPrice());
 //		userService.updateUser(seller);
+//		System.out.println("Art Name: "+ artToBuy.getName());
+//		artToBuy.setCollector(buyer);
+	//	buyer.doTransactionBuy(artToBuy.getPrice());
+//		userService.updateUser(buyer);
+		//seller.doTransactionSell(artToBuy.getPrice());
+//		userService.updateUser(seller);
+		artToBuy.setCollector(buyer);
 		artService.updateArt(artToBuy);
 		return "redirect:/dashboard";
 	}
