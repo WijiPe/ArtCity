@@ -172,7 +172,8 @@ body{
 .card{
 	transition: all .2s ease-in-out;
 	border-radius: 1em 1em;
-
+	padding:5px;
+	background: #d9e1ea
 }
 
 .card:hover, .card:focus{
@@ -188,5 +189,33 @@ body{
 	flex-position:row;
 	width: 100%;
 }
+
+.card_footer {
+  opacity: 0;
+}
+
+.card_footer:hover {
+  opacity: 1;
+  color:blue;
+  font-weight: bold;
+}
+
+card-footer >div{
+	padding:0
+}
+
+.fav{
+	
+	background-image: url(/images/favLogo.png);   
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+.fav:hover{
+  
+  background-image: url(/images/favorited.png);
+}
+
 
 
