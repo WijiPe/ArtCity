@@ -14,7 +14,7 @@
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-<title>Create Image Form</title>
+<title>Insert title here</title>
 </head>
 <script>
   var loadFile = function(event) {
@@ -57,15 +57,16 @@
 	 </div>
 	 
 	 <div class="main">
-	  	<h1 class="middle">Create New Art</h1>
-	 	<h5>Upload Art</h5>
+	  	<h1 class="middle">Create Profile</h1>
+	 	<h5>Upload Profile</h5>
 	 	
-	 	<form action="/uploadFile" method="post" enctype="multipart/form-data">
+	 	<form action="/uploadProfilePicture" method="post" enctype="multipart/form-data">
+	 	
   			
   			<div class="container">
   			<img id="output" width="200" height="200"/><br><br>
      			<div class="button-wrap">
-        			<label  class="button" for="upload">Upload Art</label>
+        			<label  class="button" for="upload">Upload Profile Picture</label>
         			<input  id="upload" type="file" name="file" accept="image/png, image/jpeg" onchange="loadFile(event)">
       				<button class="save">save</button>
       			</div>
@@ -74,40 +75,22 @@
 			
 	 	</form>	
 	 	
-
 	 	
-	 	<form:form action="/submitArtForm" method="post" modelAttribute="art">
+	 	<form action="/submitProfileForm" method="post">
+	 	<input type="hidden" name="_method" value="put" />
+	 	
 		
-		<form:hidden path="artwork" value="${art.artwork}" />
+
 		
-
-		<form:hidden path="artist" value="${userId}" />
-
-		<h5>Art Name</h5>
-
-			<form:input class="inputtext" path="name" type="text" id="name" name="name"/>
-			<br><br>
 		<h5>Description</h5>
 
-			<form:input class="inputtext" path="description" type="textarea" id="description" name="description"/>
+			<input class="inputtext" value="description" type="text" id="description" name="description"/>
 			<br><br>
-		<h5>Set Price</h5>
 
-			<form:input class="inputtext" path="price" type="number" id="price" name="price"/>
-			<br><br>
-  			
-		<h5>Category</h5>
-
-	 		<form:select path="category" class="inputtext">
-		  		<option value="Sport">Sport</option>
-		  		<option value="People">People</option>
-		  		<option value="Digital Art">Digital Art</option>
-		  		<option value="Abstract">Abstract</option>
-		  		<option value="Anime">Anime</option>
-	  		</form:select><br><br>	
 			<button class="createbtn">Create</button>
-		</form:form>
+		</form>
 
 	 </div>	
+
 </body>
 </html>

@@ -36,7 +36,8 @@ public class User {
     @Size(min=8, max=128, message="Password must be between 8 and 128 characters")
     private String password;
     
-   
+    private String userPicture;
+    
     private String description;
     
     @Min(0)
@@ -100,6 +101,16 @@ public class User {
 	}
 
 
+	public String getUserPicture() {
+		return userPicture;
+	}
+
+
+	public void setUserPicture(String userPicture) {
+		this.userPicture = userPicture;
+	}
+
+
 	public String getDescription() {
 		return description;
 	}
@@ -149,12 +160,7 @@ public class User {
 		this.nfts = nfts;
 	}
 
-    public void doTransactionBuy(Double amount) {
-    	this.wallet -= amount;
-    }
-    
-	public void doTransactionSell(Double amount) {
-		 this.wallet += amount;
-	}
+
+
 
 }

@@ -11,11 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -143,6 +143,58 @@ public class HomeController {
 		Art art = artService.oneArt(id);
 		model.addAttribute("art", art);
 		return "artDetails.jsp";
+	}
+	
+	@GetMapping("/create-profile/{id}")
+	public String profileForm(Model model, @ModelAttribute("user") User user, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/login";
+		}
+		User oneUser = userService.findUser((Long)session.getAttribute("userId"));
+		model.addAttribute("oneUser", oneUser);
+		return "profileForm.jsp";
+	}
+	
+	@PostMapping("/uploadProfilePicture")
+	public String uploadProfilePicture(@RequestParam("file") MultipartFile file, @ModelAttribute("user") User user, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/login";
+		}
+
+		
+		int leftLimit = 97; // letter 'a'
+		int rightLimit = 122; // letter 'z'
+		int targetStringLength = 10;
+		Random random = new Random();
+
+		String generatedString = random.ints(leftLimit, rightLimit + 1).limit(targetStringLength)
+				.collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString();
+
+		String newName = generatedString + "_" + file.getOriginalFilename();
+
+		System.out.println(newName);
+		Path copyLocation = fileService.uploadProfilePicture(file, newName);
+		fileService.uploadProfilePicture(file, newName);
+
+		user.setUserPicture(copyLocation.toString());
+		return "profileForm.jsp";
+	}
+	
+	@PutMapping("/submitProfileForm")
+	public String submitProfileForm(@RequestParam("description")String description, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/login";
+		}
+//			User oneUser = userService.findUser((Long)session.getAttribute("userId"));
+
+//			oneUser.setUserPicture(user.getUserPicture());
+//			oneUser.setDescription(user.getDescription());
+
+//			userService.updateUser(oneUser);
+//			System.out.println("Saved User");
+			userService.updateUserProfile((Long)session.getAttribute("userId"), description);
+			return "redirect:/dashboard";
+		
 	}
 
 }

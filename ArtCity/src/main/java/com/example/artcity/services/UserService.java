@@ -83,5 +83,13 @@ public class UserService {
         } else
             return null;
     }
+    
+	public User updateUser(User user) {
+		return userRepository.save(user);
+	}
+	
+	public void updateUserProfile(Long id, String description) {
+		userRepository.updateUser(id , description);
+	}
 	
 }
