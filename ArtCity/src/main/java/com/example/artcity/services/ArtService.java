@@ -50,9 +50,10 @@ public class ArtService {
 		artRepository.deleteById(id);
 	}
 	
-	public List<Art> findByArtist(Long id){
-		return artRepository.findByArtist(id);
+	public List<Art> findByOrderByPriceDesc(){		
+		return artRepository.findByOrderByPriceDesc();
 	}
+
 	
 	public List<Art> findAllToSale(){
 		return artRepository.findByCollectorIsNull();

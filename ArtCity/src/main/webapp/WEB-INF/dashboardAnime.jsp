@@ -11,12 +11,11 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="/css/dashboard.css" />
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Comfortaa">
+<link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Comfortaa">
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-<title>Welcome Page</title>
+<title>Anime</title>
 </head>
 <body>
 		<div class="topnav">
@@ -37,9 +36,10 @@
   						<a href="#">Sport</a>
   						<a href="#">People</a>
   						<a href="#">Abstract</a>
-  						<a href="#">Digital</a>
+  						<a href="#">Digital Art</a>
   						<a href="#">Anime</a>
   					</div>
+  				</div>
 					<a class="active" href="/create-art">Create</a>
 					<div class="dropdown">
 						<img src="/images/login.png" alt="User Logo" width="40" height="40">
@@ -50,35 +50,20 @@
   					</div>
   				</div>
   			</div>
-		</div>
+
 		
 
 		<div class="align-items-center text-center m-5">
 			<h1 class="fontweigth">Explore Collections</h1>
 		</div>
 		<div class="tabs d-flex justify-content-around m-3 border-bottom">
-			<a href="/dashboard" class="text-dark mt-3 text-decoration-none">All</a> 
-			<a href="/dashboard/mostExpensive" class="text-dark mt-3 text-decoration-none">Most Expensive</a> 
-			<form action="/dashboard/query">
-				<input type="hidden" name="query" value="Anime" />
-			     <input type="submit" value="Anime" class="btn btn-link text-dark mt-3 text-decoration-none">
-			</form>
-			<form action="/dashboard/query">
-				<input type="hidden" name="query" value="People" />
-			     <input type="submit" value="People" class="btn btn-link text-dark mt-3 text-decoration-none">
-			</form>
-			<form action="/dashboard/query">
-				<input type="hidden" name="query" value="Digital Art" />
-			     <input type="submit" value="Digital Art" class="btn btn-link text-dark mt-3 text-decoration-none">
-			</form>
-			<form action="/dashboard/query">
-				<input type="hidden" name="query" value="Sport" />
-			     <input type="submit" value="Sport" class="btn btn-link text-dark mt-3 text-decoration-none">
-			</form>
-			<form action="/dashboard/query">
-				<input type="hidden" name="query" value="Abstract" />
-			     <input type="submit" value="Abstract" class="btn btn-link text-dark mt-3 text-decoration-none">
-			</form>
+			<p class="category2"><a href="/dashboard" class="text-dark mt-3 text-decoration-none">All</a></p>
+			<p class="category2"><a href="/dashboard/mostExpensive" class="text-dark mt-3 text-decoration-none">Most Expensive</a></p>
+			<h3><a href="/dashboard/anime" class="text-dark mt-3 text-decoration-none">Anime</a></h3>
+			<p class="category2"><a href="/dashboard/people" class="text-dark mt-3 text-decoration-none">People</a></p>
+			<p class="category2"><a href="/dashboard/digitalArt" class="text-dark mt-3 text-decoration-none">Digital Art</a></p>
+			<p class="category2"><a href="/dashboard/sport" class="text-dark mt-3 text-decoration-none">Sport</a></p>
+			<p class="category2"><a href="/dashboard/abstract" class="text-dark mt-3 text-decoration-none">Abstract</a></p>
 		</div>
 
 
@@ -87,7 +72,7 @@
 			<!-- This is the card which looks like the one on welcome page of openseas -->
 			<!--  d-flex justify-content-around -->
 			<c:forEach var="art" items="${allArts}">
-				<c:if test="${art.category == query}">
+				<c:if test="${art.category == 'Anime'}">
 					<div class="card" style="width: 300px">
 						<div class="card_header">
 							<a href="/artDetails/${art.id}" ><img class="card-img-top" src="${art.artwork}" alt="Problem Loading Page" style="width: 100%" height="250"></a>

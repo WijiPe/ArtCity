@@ -2,7 +2,6 @@
 
 body {
   margin: 0px auto;
-  font-family: Arial, Helvetica, sans-serif;
   background-color:rgba(177, 173, 173, 0.295);
   background-image: linear-gradient(to bottom, rgba(255,153,153,0) 0%,rgba(255,153,153,0) 75%,rgba(255,153,153,1) 100%), url("../images/7-Tips-to-Finding-Art-Inspiration-Header-1024x649 (1).jpg");
   background-repeat: no-repeat;
@@ -65,6 +64,7 @@ body {
  	border: solid 0.5px rgba(196, 190, 190, 0.301);
 
 }
+
 form.active{
 	color: rgba(177, 173, 173, 0.295);
 	border: solid 0.5px rgba(196, 190, 190, 0.301);
@@ -228,19 +228,7 @@ form.active{
 }
 
 
-.dropdown:hover .dropbtn {
-  
-}
 
-
-.zoom {
-  padding: 50px;
-  background-color: green;
-  transition: transform .2s;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-}
 
 .line1:hover, .line2:hover, .line3:hover, .line4:hover {
   -ms-transform: scale(1.5); /* IE 9 */
