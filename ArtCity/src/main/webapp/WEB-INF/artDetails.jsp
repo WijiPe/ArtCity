@@ -67,7 +67,7 @@
 			Price: <span><c:out value="${art.price}"/> Dojo Coins</span>
 		</div>
 
-		<button type = "button" class="glow-on-hover">Buy Now</button>
+		<a href="/art/buy/${art.id}" class="button glow-on-hover p-3">Buy Now</a>
 		<div class="description">
 			<h3>Description</h3>
 

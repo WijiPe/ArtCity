@@ -8,11 +8,11 @@
 }
 
 :root{
-	/* --primary-color:white;
-	--secondary-color:#212121; */ 
+	--primary-color:white;
+	--secondary-color:#212121; 
 	
-	--primary-color:#000106;
-	--secondary-color:white;
+/* 	--primary-color:#000106;
+	--secondary-color:white; */
 }
 
 /* body{
@@ -24,6 +24,15 @@
   	position:relative;
 }
  */
+
+
+.fa-moon {
+	color: #f1c40f;
+}
+
+.fa-sun {
+	color: #f39c12;
+}
  
  body{
  	background-color: var(--primary-color);
@@ -31,8 +40,11 @@
  }
  
  .dark-theme{
+	--primary-color:#000106;
+	--secondary-color:white;
  }
 .topnav {
+	background-color:white;
   	overflow: visible;
   	flex-direction: row;
   	justify-content: space-between;
@@ -41,7 +53,7 @@
   	display:flex;
   	position:relative;
   	box-shadow: 5px 5px 5px 2px rgba(177, 173, 173, 0.295);
-  	color:var(--secondary-color)
+  	color:#212121
 }
 
 .category2 > a{
@@ -61,14 +73,14 @@
 }
 
 .topnav a:hover {
-	color: var(--secondary-color)
+	color: #212121
 	-ms-transform: scale(1.5); IE 9
   	-webkit-transform: scale(1.5); Safari 3-8
   	transform: scale(1.5);
 } 
 
 .topnav a.active {
-	color: var(--secondary-color)
+	color: #212121
 
 }
 
@@ -257,4 +269,4 @@ card-footer >div{
   background-image: url(/images/favorited.png);
 }
 
-/*   ------------------------
+
