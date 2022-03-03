@@ -17,6 +17,7 @@
 <title>Art Details Page</title>
 </head>
 <body>
+
 	<div class="topnav">
 		<div class="logo">
 			<img src="/images/Free_Sample_By_Wix.jpg" alt="Art City Logo" width="200" height="80"/>
@@ -39,26 +40,43 @@
   			<div class="dropdown">
   				<a href="#" ><img src="/images/login.png"alt="User Logo" width="40" height="40"></a>
   				<div class="dropdown-content">
-  					<a href="/logout">Log out</a>
+  					<a href="/logout">Log out </a>
   				</div>
 	 		</div>
 	 	</div>
 	 </div>
-	 <div class="container">
-	 	<div class="box1">
-			<h2><img src="${art.artwork}"alt="${art.name}" width="500" height="500"></h2>
-	 	</div>
-	 	<div class="box2">
-	 		<h4><c:out value="${art.artist.userName}"/></h4>
-	 		<h1><c:out value="${art.name}"/></h1>
-	 		<h4>Owned By <c:out value="${art.collector.userName}"/></h4>
-	 		<h4><c:out value="${art.price}"/> Dojos </h4>
-	 		<button>Buy Now</button>
-	 		<h2>Description</h2>
-	 		<h4>Create By <c:out value="${art.artist.userName}"/></h4>
-	 		<h4><c:out value="${art.description}"/></h4>
-	 		
-	 	</div>
-	 </div>
+	 
+<section class="product">
+	<div class="product__photo">
+		<div class="photo-container">
+			<div class="photo-main">
+				<div class="controls">
+					<span><c:out value="${art.name}"/></span>
+				</div>
+				<img src="${art.artwork}"alt="${art.name}">
+			</div>
+		</div>
+	</div>
+	<div class="product__info">
+		<div class="title">
+			<span style="color:blue;"><c:out value="${art.artist.userName}"/></span>
+			<h1><c:out value="${art.name}"/></h1>
+			<p >Owned By <span style="color:blue;"><c:out value="${art.collector.userName}"/></span></p>
+		</div>
+		<div class="price">
+			Price: <span><c:out value="${art.price}"/> Dojo Coins</span>
+		</div>
+
+		<button type = "button" class="glow-on-hover">Buy Now</button>
+		<div class="description">
+			<h3>Description</h3>
+
+				<p><c:out value="${art.description}"/></p>
+				<p>Create By <span style="color:blue;"><c:out value="${art.artist.userName}"/></span></p>
+
+		</div>
+	</div>
+</section>
+
 </body>
 </html>
