@@ -49,7 +49,8 @@
   			<div class="dropdown">
   				<a href="#" ><img src="/images/login.png"alt="User Logo" width="40" height="40"></a>
   				<div class="dropdown-content">
-  					<a href="/profilePageMain/${userId} ">Profile</a>
+  					<a href="/profilePageMain/${userId}">Profile</a>
+  					<a href="/editProfile/${userId}">Edit</a>
   					<a href="/logout">Log out</a>
   				</div>
 	 		</div>
@@ -61,8 +62,6 @@
 	 	<h5>Upload Profile</h5>
 	 	
 	 	<form action="/uploadProfilePicture" method="post" enctype="multipart/form-data">
-	 	
-  			
   			<div class="container">
   			<img id="output" width="200" height="200"/><br><br>
      			<div class="button-wrap">
@@ -70,17 +69,13 @@
         			<input  id="upload" type="file" name="file" accept="image/png, image/jpeg" onchange="loadFile(event)">
       				<button class="save">save</button>
       			</div>
-      			
     		</div>
-			
 	 	</form>	
 	 	
 	 	
 	 	<form action="/submitProfileForm" method="post">
 	 	<input type="hidden" name="_method" value="put" />
 	 	
-		
-
 		
 		<h5>Description</h5>
 

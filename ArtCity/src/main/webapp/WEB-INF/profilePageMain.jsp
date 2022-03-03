@@ -43,6 +43,7 @@
   				<img src="/images/login.png"alt="User Logo" width="40" height="40">
   				<div class="dropdown-content">
   					<a href="/profilePageMain/${userId} ">Profile</a>
+  					<a href="/editProfile/${userId}">Edit</a>
   					<a href="/logout">Log out</a>
   				</div>
 	 		</div>
@@ -52,7 +53,7 @@
 		<img src="/images/sample_background.png" alt="problem  Loding img" height="100" width="auto"/>
 	</div>
 		<div class="/profile_img text-center" style="margin:-29px 0">
-			<img src="/images/user_img.png" alt="user_img" width="70" height="70" class="rounded-circle bg-secondary">
+			<img src="${user.userPicture}" alt="user_img" width="70" height="70" class="rounded-circle bg-secondary">
 		</div>
 		<div class="user_details text-center mt-5">
 			<p><c:out value="${user.userName}"/></p>
