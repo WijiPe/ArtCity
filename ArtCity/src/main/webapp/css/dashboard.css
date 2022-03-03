@@ -13,6 +13,7 @@ body{
   	background-position: bottom;
   	height: 100vh;
   	width: 100%;
+  	position:relative;
 }
 
 .topnav {
@@ -66,7 +67,14 @@ body{
  	border: solid 0.5px rgba(196, 190, 190, 0.301);
 
 }
+form.active{
+	color: rgba(177, 173, 173, 0.295);
+	border: solid 0.5px rgba(196, 190, 190, 0.301);
+}
 
+.logo{
+	margin-left:20px;
+}
 .search{
 	width: 500px;
     height: 40px;
@@ -148,13 +156,22 @@ body{
 }
 
 
-.dropdown:hover .dropbtn {
-  
-}
 
 .fontweigth{
 	font-weight: 900;
 }
+
+h3{
+	font-weight:900px;
+}
+
+
+.category2:hover, .category2:active  {
+  	-ms-transform: scale(1.5); /* IE 9 */
+  	-webkit-transform: scale(1.5); /* Safari 3-8 */
+	transform: scale(1.5);
+}
+
 
 .pageContents{
 	margin-left: 20px;

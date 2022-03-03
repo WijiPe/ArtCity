@@ -39,7 +39,7 @@
   			</div>
   			<a  class="active" href="/create-art">Create</a>
   			<div class="dropdown">
-  				<a href="#" ><img src="images/login.png"alt="User Logo" width="40" height="40"></a>
+  				<img src="images/login.png"alt="User Logo" width="40" height="40">
   				<div class="dropdown-content">
   					<a href="/login">Log In</a>
   					<a href="/register">Register</a>

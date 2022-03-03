@@ -78,6 +78,7 @@ public class HomeController {
 	@PostMapping("/submitArtForm")
 	public String submitArtForm(@Valid @ModelAttribute("art") Art art, BindingResult result) {
 		if (result.hasErrors()) {
+			System.out.println("Error");
 			return "artForm.jsp";
 		} else {
 			artService.createArt(art);
@@ -96,24 +97,50 @@ public class HomeController {
 	
 	@GetMapping("/dashboard/mostExpensive")
 	public String mostExpensive(Model model) {
-		List<Art> allArts=artService.findAllArt();
+		List<Art> allArts=artService.findByOrderByPriceDesc();
 		model.addAttribute("allArts", allArts);
-		model.addAttribute("price", 1000.0);
 		return "mostExpensive.jsp";
 	}
 	
-	@GetMapping("/dashboard/query")
-	public String dashboardQuery(@RequestParam("query")String query, Model model) {
+	@GetMapping("/dashboard/anime")
+	public String dashboardAnime(Model model) {
 		List<Art> allArts=artService.findAllArt();
 		model.addAttribute("allArts", allArts);
-		model.addAttribute("query", query);
-		return "dashboardQuery.jsp";
+		return "dashboardAnime.jsp";
 	}
 	
-	@GetMapping("/showCollection")
-	public String showCollection(Model model) {
-		return "showCollection.jsp";
+	@GetMapping("/dashboard/people")
+	public String dashboardPeople(Model model) {
+		List<Art> allArts=artService.findAllArt();
+		model.addAttribute("allArts", allArts);
+		return "dashboardPeople.jsp";
 	}
+	
+	@GetMapping("/dashboard/digitalArt")
+	public String dashboardDigitalArt(Model model) {
+		List<Art> allArts=artService.findAllArt();
+		model.addAttribute("allArts", allArts);
+		return "dashboardDigitalArt.jsp";
+	}
+	
+	@GetMapping("/dashboard/sport")
+	public String dashboardSport(Model model) {
+		List<Art> allArts=artService.findAllArt();
+		model.addAttribute("allArts", allArts);
+		return "dashboardSport.jsp";
+	}
+	
+	@GetMapping("/dashboard/abstract")
+	public String dashboardAbstract(Model model) {
+		List<Art> allArts=artService.findAllArt();
+		model.addAttribute("allArts", allArts);
+		return "dashboardAbstract.jsp";
+	}
+
+//	@GetMapping("/showCollection")
+//	public String showCollection(Model model) {
+//		return "showCollection.jsp";
+//	}
 	
 	@GetMapping("/profilePageMain/{userid}")
 	public String profilePageMain(@PathVariable("userid")Long id, Model model, HttpSession session) {

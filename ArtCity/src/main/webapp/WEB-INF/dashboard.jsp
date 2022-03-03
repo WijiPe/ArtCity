@@ -10,7 +10,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/css/dashboard.css" />
+<link rel="stylesheet" href="/css/dashboard.css"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script src="/webjars/jquery/jquery.min.js"></script>
@@ -34,46 +34,31 @@
   						<a href="#">Sport</a>
   						<a href="#">People</a>
   						<a href="#">Abstract</a>
-  						<a href="#">Digital</a>
+  						<a href="#">Digital Art</a>
   						<a href="#">Anime</a>
   					</div>
-					<a class="active" href="/create-art">Create</a>
-					<div class="dropdown">
-						<img src="images/login.png" alt="User Logo" width="40" height="40">
-						<div class="dropdown-content">
-							<a href="/profilePageMain/${userId} ">Profile</a>
-  							<a href="/logout">Log out</a>
-  						</div>
+  				</div>
+				<a class="active" href="/create-art">Create</a>
+				<div class="dropdown">
+					<img src="images/login.png" alt="User Logo" width="40" height="40">
+					<div class="dropdown-content">
+						<a href="/profilePageMain/${userId} ">Profile</a>
+  						<a href="/logout">Log out</a>
   					</div>
-				</div>
+  				</div>
 			</div>
-		</div>
+		</div>	
 		<div class="align-items-center text-center m-5">
 			<h1 class="fontweigth">Explore Collections</h1>
 		</div>
 		<div class="tabs d-flex justify-content-around m-3 border-bottom">
-			<a href="/dashboard" class="text-dark mt-3 text-decoration-none">All</a> 
-			<a href="/dashboard/mostExpensive" class="text-dark mt-3 text-decoration-none">Most Expensive</a> 
-			<form action="/dashboard/query">
-				<input type="hidden" name="query" value="anime" />
-			     <input type="submit" value="Anime" class="btn btn-link text-dark mt-3 text-decoration-none">
-			</form>
-			<form action="/dashboard/query">
-				<input type="hidden" name="query" value="people" />
-			     <input type="submit" value="People" class="btn btn-link text-dark mt-3 text-decoration-none">
-			</form>
-			<form action="/dashboard/query">
-				<input type="hidden" name="query" value="Digital Art" />
-			     <input type="submit" value="Digital Art" class="btn btn-link text-dark mt-3 text-decoration-none">
-			</form>
-			<form action="/dashboard/query">
-				<input type="hidden" name="query" value="Sport" />
-			     <input type="submit" value="Sport" class="btn btn-link text-dark mt-3 text-decoration-none">
-			</form>
-			<form action="/dashboard/query">
-				<input type="hidden" name="query" value="abstract" />
-			     <input type="submit" value="Abstract" class="btn btn-link text-dark mt-3 text-decoration-none">
-			</form>
+			<h3><a href="/dashboard" class="text-dark mt-3 text-decoration-none">All</a></h3>
+			<p class="category2"><a href="/dashboard/mostExpensive" class="text-dark mt-3 text-decoration-none">Most Expensive</a></p>
+			<p class="category2"><a href="/dashboard/anime" class="text-dark mt-3 text-decoration-none">Anime</a></p>
+			<p class="category2"><a href="/dashboard/people" class="text-dark mt-3 text-decoration-none">People</a></p>
+			<p class="category2"><a href="/dashboard/digitalArt" class="text-dark mt-3 text-decoration-none">Digital Art</a></p>
+			<p class="category2"><a href="/dashboard/sport" class="text-dark mt-3 text-decoration-none">Sport</a></p>
+			<p class="category2"><a href="/dashboard/abstract" class="text-dark mt-3 text-decoration-none">Abstract</a></p>
 		</div>
 
 
