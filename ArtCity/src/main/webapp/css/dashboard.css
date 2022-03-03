@@ -7,7 +7,15 @@
 	font-family:'Comfortaa';
 }
 
-body{
+:root{
+	/* --primary-color:white;
+	--secondary-color:#212121; */ 
+	
+	--primary-color:#000106;
+	--secondary-color:white;
+}
+
+/* body{
 	background-repeat: no-repeat;
   	background-size: cover;
   	background-position: bottom;
@@ -15,10 +23,17 @@ body{
   	width: 100%;
   	position:relative;
 }
-
+ */
+ 
+ body{
+ 	background-color: var(--primary-color);
+ 	color: var(--secondary-color)
+ }
+ 
+ .dark-theme{
+ }
 .topnav {
   	overflow: visible;
-  	background-color:  white;
   	flex-direction: row;
   	justify-content: space-between;
   	align-items: center;
@@ -26,12 +41,16 @@ body{
   	display:flex;
   	position:relative;
   	box-shadow: 5px 5px 5px 2px rgba(177, 173, 173, 0.295);
-  	
+  	color:var(--secondary-color)
+}
+
+.category2 > a{
+	
+	color:  var(--secondary-color);
 }
 
 .topnav a {
-	
-  	color: #f2f2f2;
+
   	text-align: center;
   	padding: 14px 16px;
   	text-decoration: none;
@@ -41,16 +60,15 @@ body{
 
 }
 
-
 .topnav a:hover {
-	color: black;
-	-ms-transform: scale(1.5); /* IE 9 */
-  	-webkit-transform: scale(1.5); /* Safari 3-8 */
+	color: var(--secondary-color)
+	-ms-transform: scale(1.5); IE 9
+  	-webkit-transform: scale(1.5); Safari 3-8
   	transform: scale(1.5);
-}
+} 
 
 .topnav a.active {
-	color: black;
+	color: var(--secondary-color)
 
 }
 
@@ -61,15 +79,20 @@ body{
  	   
 }
 
-.topnav img:hover {
+/* .topnav img:hover {
   	border-radius: 2em 2em;
  	box-shadow: 5px 5px 5px 2px #888888;
  	border: solid 0.5px rgba(196, 190, 190, 0.301);
 
-}
+} */
 form.active{
 	color: rgba(177, 173, 173, 0.295);
 	border: solid 0.5px rgba(196, 190, 190, 0.301);
+}
+
+#themeIcon{
+	width: 30px;
+	margin-right: 10px;
 }
 
 .logo{
@@ -99,7 +122,7 @@ form.active{
 }
 
 .dropbtn {
-  	color: white;
+  	color:var(--secondary-color);
   	padding: 16px;
   	font-size: 16px;
   	border: none;
