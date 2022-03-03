@@ -56,7 +56,7 @@
 		<form action="/dashboard/query">
 			<input type="hidden" name="query" value="anime" /> <input
 				type="submit" value="Anime"
-				class="btn btn-link text-dark mt-3 text-decoration-none">
+				class="highlight btn btn-link text-dark mt-3 text-decoration-none ">
 		</form>
 		<form action="/dashboard/query">
 			<input type="hidden" name="query" value="people" /> <input

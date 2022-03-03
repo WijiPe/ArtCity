@@ -47,6 +47,7 @@
 			</div>
 
 		<button class="noselect" type = "submit" value = "Login"></button>
+		<p>Want to Become a member? <a href="/register">Register</a></p>
 
 		</form:form>
 
