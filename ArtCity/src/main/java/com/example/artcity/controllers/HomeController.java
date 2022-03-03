@@ -89,7 +89,7 @@ public class HomeController {
 	
 	@GetMapping("/dashboard")
 	public String dashboard(Model model) {
-		List<Art> allArts=artService.findAllArt();
+		List<Art> allArts=artService.findAllToSale();
 		model.addAttribute("allArts", allArts);
 	
 		return "dashboard.jsp";
@@ -224,4 +224,18 @@ public class HomeController {
 		
 	}
 
+	@GetMapping("/art/buy/{id}")
+	public String buyArt(@PathVariable("id") Long id, HttpSession session) {
+		Art artToBuy=artService.findArtById(id);
+		User buyer=userService.findUser((Long) session.getAttribute("userId"));
+		User seller=userService.findUser(artToBuy.getArtist().getId());
+		System.out.println("Art Name: "+ artToBuy.getName());
+		artToBuy.setCollector(buyer);
+		buyer.doTransactionBuy(artToBuy.getPrice());
+//		userService.updateUser(buyer);
+		seller.doTransactionSell(artToBuy.getPrice());
+//		userService.updateUser(seller);
+		artService.updateArt(artToBuy);
+		return "redirect:/dashboard";
+	}
 }

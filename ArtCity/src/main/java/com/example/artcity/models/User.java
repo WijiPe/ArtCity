@@ -44,15 +44,15 @@ public class User {
     private Double wallet;
     
     @Transient
-    @NotEmpty(message="Confirm Password is required!")
+   // @NotEmpty(message="Confirm Password is required!")
     @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
     private String confirm;
-    
+    //user created arts
     @OneToMany(mappedBy="artist", fetch = FetchType.LAZY)
     private List<Art> arts;
-    
+    //User collected/ purchased arts
 	@OneToMany(mappedBy="collector", fetch = FetchType.LAZY)
-    private List<Art> nfts;
+    private List<Art> nfts; 
     
   
 	public User() {
@@ -149,13 +149,10 @@ public class User {
 	public void setArts(List<Art> arts) {
 		this.arts = arts;
 	}
-
-
 	public List<Art> getNfts() {
 		return nfts;
 	}
-
-
+	
 	public void setNfts(List<Art> nfts) {
 		this.nfts = nfts;
 	}
