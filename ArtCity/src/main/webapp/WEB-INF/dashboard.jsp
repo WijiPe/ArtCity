@@ -30,6 +30,7 @@
 		</form>
 		<div class="link">
 			<div class="dropdown">
+
 				<a href="#" class="dropbtn">Explore</a>
 				<div class="dropdown-content">
 					<a href="/dashboard">All Arts</a> <a href="#">Sport</a> <a href="#">People</a>
@@ -46,6 +47,7 @@
 						out</a>
 				</div>
 			</div>
+
 		</div>
 	</div>
 	<div class="d-flex justify-content-between align-items-center text-center m-5">
