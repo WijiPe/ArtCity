@@ -14,6 +14,6 @@ public interface ArtRepository extends CrudRepository<Art, Long> {
 	List<Art> findByArtist(Long id);
 	List<Art> findByOrderByPriceDesc();
 	List<Art> findByCollectorIsNull();
-	
+	List<Art> findByInMarketIsTrue();
 
 }

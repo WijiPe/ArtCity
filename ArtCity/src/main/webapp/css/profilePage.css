@@ -209,3 +209,17 @@ body {
 	flex-position:row;
 	width: 100%;
 }
+
+
+.fav{
+	
+	background-image: url(/images/favLogo.png);   
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+.fav:hover{
+  
+  background-image: url(/images/favorited.png);
+}

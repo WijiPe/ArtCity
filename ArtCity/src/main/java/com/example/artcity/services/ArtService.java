@@ -56,6 +56,11 @@ public class ArtService {
 
 	
 	public List<Art> findAllToSale(){
-		return artRepository.findByCollectorIsNull();
+		return artRepository.findByInMarketIsTrue();
 	}
+	
+//	public List<Art> findAllToSale(){
+//		return artRepository.findByCollectorIsNull();
+//	}
+
 }

@@ -82,6 +82,7 @@
 		
 
 		<form:hidden path="artist" value="${userId}" />
+		<form:hidden path="inMarket" value="${true}" />
 
 		<h5>Art Name</h5>
 

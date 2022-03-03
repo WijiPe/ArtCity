@@ -31,39 +31,26 @@
 			<div class="dropdown">
 				<a href="#" class="dropbtn">Explore</a>
 				<div class="dropdown-content">
-					<a href="/dashboard">All Arts</a> <a href="#">Sport</a> <a href="#">People</a>
-					<a href="#">Abstract</a> <a href="#">Digital</a> <a href="#">Anime</a>
+					<a href="/dashboard">All Arts</a> 
+					<a href="#">Sport</a> 
+					<a href="#">People</a>
+					<a href="#">Abstract</a> 
+					<a href="#">Digital</a> 
+					<a href="#">Anime</a>
 				</div>
+			</div>
 				<a class="active" href="/create-art">Create</a>
 				<div class="dropdown">
 					<img src="images/login.png" alt="User Logo" width="40" height="40">
 					<div class="dropdown-content">
-
-						<a href="/dashboard">All Arts</a>
-  						<a href="#">Sport</a>
-  						<a href="#">People</a>
-  						<a href="#">Abstract</a>
-  						<a href="#">Digital Art</a>
-  						<a href="#">Anime</a>
-  					</div>
-  				</div>
-				<a class="active" href="/create-art">Create</a>
-				<div class="dropdown">
-					<img src="images/login.png" alt="User Logo" width="40" height="40">
-					<div class="dropdown-content">
-						<a href="/profilePageMain/${userId} ">Profile</a>
-  						<a href="/logout">Log out</a>
-  					</div>
-  				</div>
-
 						<a href="/profilePageMain/${userId} ">Profile</a> 
 						<a href="/editProfile/${userId}">Edit</a>
 						<a href="/logout">Log out</a>
 					</div>
 				</div>
-
 			</div>
-		</div>	
+		</div>
+
 		<div class="align-items-center text-center m-5">
 			<h1 class="fontweigth">Explore Collections</h1>
 		</div>
@@ -102,16 +89,16 @@
 						</div>
 					</div>
 				</div>
-				<c:if test="${art.artist.id != userId}">
+				
 				<div class="card_footer d-flex justify-content-between align-items-center ">
-
+					<c:if test="${art.collector.id != userId}">
 					<div class='card_footer'>
 						<a href="/art/buy/${art.id}" class="btn btn-link text-primary mt-3 text-decoration-none">Buy Now</a>
 					</div>
-
+					</c:if>
 					<a href="#" class="fav"> </a>
 				</div>
-				</c:if>
+				
 			</div>
 		</c:forEach>
 	</div>

@@ -40,6 +40,7 @@ public class User {
     
     private String description;
     
+    
     @Min(0)
     private Double wallet;
     
