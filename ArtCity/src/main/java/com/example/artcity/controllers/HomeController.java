@@ -139,12 +139,15 @@ public class HomeController {
 		model.addAttribute("allArts", allArts);
 		return "dashboardAbstract.jsp";
 	}
-
-//	@GetMapping("/showCollection")
-//	public String showCollection(Model model) {
-//		return "showCollection.jsp";
-//	}
 	
+	@GetMapping("/dashboard/buy/{id}")
+	public String buyArt(@PathVariable("id") Long id) {
+		Art artTobuy=artService.findArtById(id);
+		
+		return null;
+	}
+
+
 
 
 	@GetMapping("/profilePageMain/{userid}")
@@ -172,6 +175,7 @@ public class HomeController {
 		if (session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
+		System.out.println("In artDetails");
 		Art art = artService.oneArt(id);
 		model.addAttribute("art", art);
 		return "artDetails.jsp";
@@ -228,6 +232,7 @@ public class HomeController {
 
 	@GetMapping("/art/buy/{id}")
 	public String buyArt(@PathVariable("id") Long id, HttpSession session) {
+		System.out.println("In Art/buy");
 		Art artToBuy = artService.findArtById(id);
 		User buyer = userService.findUser((Long) session.getAttribute("userId"));
 		User seller = userService.findUser(artToBuy.getArtist().getId());
@@ -247,5 +252,11 @@ public class HomeController {
 			System.out.println("Saved Art");
 			return "redirect:/dashboard";
 	}
+	
+//	@GetMapping("/showCollection")
+//	public String showCollection(Model model) {
+//		return "showCollection.jsp";
+//	}
+	
 	
 }
