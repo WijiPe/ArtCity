@@ -33,7 +33,7 @@
   					<a href="#">Sport</a>
   					<a href="#">People</a>
   					<a href="#">Abstract</a>
-  					<a href="#">Digital</a>
+  					<a href="#">Digital Art</a>
   					<a href="#">Anime</a>
   				</div>
   			</div>
@@ -49,6 +49,7 @@
 	 		</div>
 	 	</div>
 	 </div>
+	 
 		<div class="align-items-center text-center m-5">
 			<h1 class="fontweigth">Explore Collections</h1>
 		</div>
