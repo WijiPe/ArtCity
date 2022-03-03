@@ -37,6 +37,7 @@ public class Art {
     @NotEmpty(message="Art is required!")
     private String artwork;
     
+    
     @NotEmpty(message="Description is required!")
     @Size(min=3, max=30, message="Description must be between 3 and 30 characters")
     private String description;

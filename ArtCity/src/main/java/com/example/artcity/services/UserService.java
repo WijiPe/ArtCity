@@ -83,10 +83,15 @@ public class UserService {
         } else
             return null;
     }
-    //Update User
-    public User updateUser(User user) {
-    	return userRepository.save(user);
-    }
+
     
+	public User updateUser(User user) {
+		return userRepository.save(user);
+	}
+	
+	public void updateUserProfile(Long id, String description) {
+		userRepository.updateUser(id , description);
+	}
+
 	
 }
