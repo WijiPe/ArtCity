@@ -38,6 +38,7 @@
   				</div>
   			</div>
   			<a  class="active" href="/create-art">Create</a>
+  		<!-- 	<img src="images/moon.png" id="themeIcon"> -->
   			<div class="dropdown">
   				<img src="/images/login.png"alt="User Logo" width="40" height="40">
   				<div class="dropdown-content">
@@ -52,13 +53,13 @@
 			<h1 class="fontweigth">Explore Collections</h1>
 		</div>
 		<div class="tabs d-flex justify-content-around m-3 border-bottom">
-			<h3><a href="/dashboard" class="text-dark mt-3 text-decoration-none">All</a></h3>
-			<p class="category2"><a href="/dashboard/mostExpensive" class="text-dark mt-3 text-decoration-none">Most Expensive</a></p>
-			<p class="category2"><a href="/dashboard/anime" class="text-dark mt-3 text-decoration-none">Anime</a></p>
-			<p class="category2"><a href="/dashboard/people" class="text-dark mt-3 text-decoration-none">People</a></p>
-			<p class="category2"><a href="/dashboard/digitalArt" class="text-dark mt-3 text-decoration-none">Digital Art</a></p>
-			<p class="category2"><a href="/dashboard/sport" class="text-dark mt-3 text-decoration-none">Sport</a></p>
-			<p class="category2"><a href="/dashboard/abstract" class="text-dark mt-3 text-decoration-none">Abstract</a></p>
+			<p class="category2"><a href="/dashboard" class="mt-3 text-decoration-none">All</a></p>
+			<p class="category2"><a href="/dashboard/mostExpensive" class=" mt-3 text-decoration-none">Most Expensive</a></p>
+			<p class="category2"><a href="/dashboard/anime" class=" mt-3 text-decoration-none">Anime</a></p>
+			<p class="category2"><a href="/dashboard/people" class=" mt-3 text-decoration-none">People</a></p>
+			<p class="category2"><a href="/dashboard/digitalArt" class=" mt-3 text-decoration-none">Digital Art</a></p>
+			<p class="category2"><a href="/dashboard/sport" class=" mt-3 text-decoration-none">Sport</a></p>
+			<p class="category2"><a href="/dashboard/abstract" class=" mt-3 text-decoration-none">Abstract</a></p>
 		</div>
 
 	<div class="pageContents">
