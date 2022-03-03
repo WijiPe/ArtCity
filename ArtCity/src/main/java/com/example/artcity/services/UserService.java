@@ -88,5 +88,13 @@ public class UserService {
     	return userRepository.save(user);
     }
     
-	
+    public void updateUserWallet(Double amount,User seller, User buyer) {
+    	buyer.setWallet(buyer.getWallet()-amount);
+    	buyer.setConfirm("testTest");
+    	seller.setWallet(seller.getWallet()+amount);
+    	seller.setConfirm("testTest");
+    	userRepository.save(buyer);
+    	userRepository.save(seller);
+    }
+    
 }
