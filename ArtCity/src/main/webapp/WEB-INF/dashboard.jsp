@@ -38,6 +38,7 @@
 				<div class="dropdown">
 					<img src="images/login.png" alt="User Logo" width="40" height="40">
 					<div class="dropdown-content">
+
 						<a href="/dashboard">All Arts</a>
   						<a href="#">Sport</a>
   						<a href="#">People</a>
@@ -54,6 +55,13 @@
   						<a href="/logout">Log out</a>
   					</div>
   				</div>
+
+						<a href="/profilePageMain/${userId} ">Profile</a> 
+						<a href="/editProfile/${userId}">Edit</a>
+						<a href="/logout">Log out</a>
+					</div>
+				</div>
+
 			</div>
 		</div>	
 		<div class="align-items-center text-center m-5">
@@ -68,7 +76,6 @@
 			<p class="category2"><a href="/dashboard/sport" class="text-dark mt-3 text-decoration-none">Sport</a></p>
 			<p class="category2"><a href="/dashboard/abstract" class="text-dark mt-3 text-decoration-none">Abstract</a></p>
 		</div>
-
 
 	<div class="pageContents">
 		<!-- 	made few templates for cards  -->

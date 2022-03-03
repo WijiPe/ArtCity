@@ -41,7 +41,7 @@ public class UserController {
 			return "login.jsp";
 		}
 		session.setAttribute("userId", user.getId());
-		return "redirect:/profilePageMain/"+ user.getId();
+		return "redirect:/dashboard";
 	}
 
 	@GetMapping("/register")
@@ -61,7 +61,7 @@ public class UserController {
 		}
 
 		session.setAttribute("userId", newUser.getId());
-		return "redirect:/profilePageMain/"+ newUser.getId();
+		return "redirect:/dashboard";
 	}
 
     @GetMapping("/logout")
