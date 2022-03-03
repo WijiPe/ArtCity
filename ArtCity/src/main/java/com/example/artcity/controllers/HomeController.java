@@ -33,7 +33,7 @@ public class HomeController {
 
 	@Autowired
 	ArtService artService;
-	
+
 	@Autowired
 	UserService userService;
 
@@ -44,19 +44,19 @@ public class HomeController {
 
 	@GetMapping("/create-art")
 	public String artForm(Model model, @ModelAttribute("art") Art art, HttpSession session) {
-		if(session.getAttribute("userId") == null) {
+		if (session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
 		return "artForm.jsp";
 	}
 
 	@PostMapping("/uploadFile")
-	public String uploadFile(@RequestParam("file") MultipartFile file, @ModelAttribute("art") Art art, HttpSession session) {
-		if(session.getAttribute("userId") == null) {
+	public String uploadFile(@RequestParam("file") MultipartFile file, @ModelAttribute("art") Art art,
+			HttpSession session) {
+		if (session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
 
-		
 		int leftLimit = 97; // letter 'a'
 		int rightLimit = 122; // letter 'z'
 		int targetStringLength = 10;
@@ -85,83 +85,83 @@ public class HomeController {
 			return "redirect:/dashboard";
 		}
 	}
-	
+
 	@GetMapping("/dashboard")
 	public String dashboard(Model model) {
-		List<Art> allArts=artService.findAllToSale();
+		List<Art> allArts = artService.findAllToSale();
 		model.addAttribute("allArts", allArts);
-	
+
 		return "dashboard.jsp";
 	}
-	
+
 	@GetMapping("/dashboard/mostExpensive")
 	public String mostExpensive(Model model) {
-		List<Art> allArts=artService.findAllArt();
+		List<Art> allArts = artService.findAllArt();
 		model.addAttribute("allArts", allArts);
 		model.addAttribute("price", 1000.0);
 		return "mostExpensive.jsp";
 	}
-	
+
 	@GetMapping("/dashboard/query")
-	public String dashboardQuery(@RequestParam("query")String query, Model model) {
-		List<Art> allArts=artService.findAllArt();
+	public String dashboardQuery(@RequestParam("query") String query, Model model) {
+		List<Art> allArts = artService.findAllArt();
 		model.addAttribute("allArts", allArts);
 		model.addAttribute("query", query);
 		return "dashboardQuery.jsp";
 	}
-	
+
 	@GetMapping("/showCollection")
 	public String showCollection(Model model) {
 		return "showCollection.jsp";
 	}
-	
+
 	@GetMapping("/profilePageMain/{userid}")
-	public String profilePageMain(@PathVariable("userid")Long id, Model model, HttpSession session) {
-		if(session.getAttribute("userId") == null) {
+	public String profilePageMain(@PathVariable("userid") Long id, Model model, HttpSession session) {
+		if (session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
-		User user = userService.findUser((Long)session.getAttribute("userId"));
+		User user = userService.findUser((Long) session.getAttribute("userId"));
 		model.addAttribute("user", user);
 		return "profilePageMain.jsp";
 	}
-	
+
 	@GetMapping("/profilePageCreated/{userid}")
-	public String profilePageCreated(@PathVariable("userid")Long id, Model model, HttpSession session) {
-		if(session.getAttribute("userId") == null) {
+	public String profilePageCreated(@PathVariable("userid") Long id, Model model, HttpSession session) {
+		if (session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
-		User user = userService.findUser((Long)session.getAttribute("userId"));
+		User user = userService.findUser((Long) session.getAttribute("userId"));
 		model.addAttribute("user", user);
 		return "profilePageCreated.jsp";
 	}
-	
+
 	@GetMapping("/artDetails/{id}")
-	public String artDetails(@PathVariable("id")Long id, Model model, HttpSession session) {
-		if(session.getAttribute("userId") == null) {
+	public String artDetails(@PathVariable("id") Long id, Model model, HttpSession session) {
+		if (session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
 		Art art = artService.oneArt(id);
 		model.addAttribute("art", art);
 		return "artDetails.jsp";
 	}
-	
-	@GetMapping("/create-profile/{id}")
+
+	@GetMapping("/editProfile/{id}")
 	public String profileForm(Model model, @ModelAttribute("user") User user, HttpSession session) {
-		if(session.getAttribute("userId") == null) {
+		if (session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
-		User oneUser = userService.findUser((Long)session.getAttribute("userId"));
+		User oneUser = userService.findUser((Long) session.getAttribute("userId"));
 		model.addAttribute("oneUser", oneUser);
 		return "profileForm.jsp";
 	}
-	
+
 	@PostMapping("/uploadProfilePicture")
-	public String uploadProfilePicture(@RequestParam("file") MultipartFile file, @ModelAttribute("user") User user, HttpSession session) {
-		if(session.getAttribute("userId") == null) {
+	public String uploadProfilePicture(@RequestParam("file") MultipartFile file, HttpSession session) {
+		if (session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
 
-		
+		System.out.println("IN uploadProfilePicture method:");
 		int leftLimit = 97; // letter 'a'
 		int rightLimit = 122; // letter 'z'
 		int targetStringLength = 10;
@@ -175,45 +175,31 @@ public class HomeController {
 		System.out.println(newName);
 		Path copyLocation = fileService.uploadProfilePicture(file, newName);
 		fileService.uploadProfilePicture(file, newName);
-
+		User user = userService.findUser((Long) session.getAttribute("userId"));
 		user.setUserPicture(copyLocation.toString());
-		return "profileForm.jsp";
+		userService.updateUser(user);
+		return "redirect:/editProfile/"+user.getId().toString();
 	}
-	
+
 	@PutMapping("/submitProfileForm")
-	public String submitProfileForm(@RequestParam("description")String description, HttpSession session) {
-		if(session.getAttribute("userId") == null) {
+	public String submitProfileForm(@RequestParam("description") String description, HttpSession session) {
+		if (session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
-//			User oneUser = userService.findUser((Long)session.getAttribute("userId"));
+		User user = userService.findUser((Long) session.getAttribute("userId"));
+		System.out.println(user.getUserPicture());
+		user.setDescription(description);
+		userService.updateUser(user);
+		return "redirect:/dashboard";
 
-//			oneUser.setUserPicture(user.getUserPicture());
-//			oneUser.setDescription(user.getDescription());
-
-//			userService.updateUser(oneUser);
-//			System.out.println("Saved User");
-			userService.updateUserProfile((Long)session.getAttribute("userId"), description);
-			return "redirect:/dashboard";
-		
 	}
 
 	@GetMapping("/art/buy/{id}")
 	public String buyArt(@PathVariable("id") Long id, HttpSession session) {
-		Art artToBuy=artService.findArtById(id);
-		User buyer=userService.findUser((Long) session.getAttribute("userId"));
-		User seller=userService.findUser(artToBuy.getArtist().getId());
+		Art artToBuy = artService.findArtById(id);
+		User buyer = userService.findUser((Long) session.getAttribute("userId"));
+		User seller = userService.findUser(artToBuy.getArtist().getId());
 		userService.updateUserWallet(artToBuy.getPrice(), seller, buyer);
-//		buyer.setWallet(buyer.getWallet()-artToBuy.getPrice());
-//		userService.updateUser(buyer);
-//	
-		//seller.setWallet(buyer.getWallet()+artToBuy.getPrice());
-//		userService.updateUser(seller);
-//		System.out.println("Art Name: "+ artToBuy.getName());
-//		artToBuy.setCollector(buyer);
-	//	buyer.doTransactionBuy(artToBuy.getPrice());
-//		userService.updateUser(buyer);
-		//seller.doTransactionSell(artToBuy.getPrice());
-//		userService.updateUser(seller);
 		artToBuy.setCollector(buyer);
 		artService.updateArt(artToBuy);
 		return "redirect:/dashboard";

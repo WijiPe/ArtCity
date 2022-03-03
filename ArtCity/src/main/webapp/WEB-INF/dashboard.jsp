@@ -39,8 +39,9 @@
 				<div class="dropdown">
 					<img src="images/login.png" alt="User Logo" width="40" height="40">
 					<div class="dropdown-content">
-						<a href="/profilePageMain/${userId} ">Profile</a> <a
-							href="/logout">Log out</a>
+						<a href="/profilePageMain/${userId} ">Profile</a> 
+						<a href="/editProfile/${userId}">Edit</a>
+						<a href="/logout">Log out</a>
 					</div>
 				</div>
 			</div>
