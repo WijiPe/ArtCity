@@ -86,16 +86,16 @@
 						</div>
 					</div>
 				</div>
-				<c:if test="${art.artist.id != userId}">
+				
 				<div class="card_footer d-flex justify-content-between align-items-center ">
-
+					<c:if test="${art.collector.id != userId}">
 					<div class='card_footer'>
 						<a href="/art/buy/${art.id}" class="btn btn-link text-primary mt-3 text-decoration-none">Buy Now</a>
 					</div>
-
+					</c:if>
 					<a href="#" class="fav"> </a>
 				</div>
-				</c:if>
+				
 			</div>
 		</c:forEach>
 	</div>

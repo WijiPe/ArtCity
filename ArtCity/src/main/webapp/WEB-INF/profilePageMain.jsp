@@ -15,8 +15,15 @@
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-<title>Welcome Page</title>
+<title>Profile Page</title>
 </head>
+<script>
+	function handleSell(artId){
+		var hidden = document.getElementById(artId);
+		hidden.style.display = "inline";
+		console.log(artId);
+	}
+</script>
 <body>
 	
 	<div class="topnav">
@@ -84,6 +91,25 @@
 						</div>
 					</div>
 				</div>
+				
+				<div class="card_footer d-flex justify-content-between align-items-center ">
+					<c:if test="${art.collector.id == userId}">
+					<div class='card_footer'>
+						<button onClick="handleSell(${art.id})" class=" btn btn-link text-primary mt-3 text-decoration-none" value="${art.id}">Sell</button>
+					</div>
+					
+					<div id="${art.id}" style="display:none">
+						<form action="/resell" method="post">
+						<input type="hidden" name="_method" value="put" />
+							<input type=hidden name="id" value="${art.id}" />
+							<input class="inputtext" type="number" id="price" name="price" value="${art.price}"/>
+							<button>Submit</button>
+						</form>
+					</div>
+					</c:if>
+					<a href="#" class="fav"> </a>
+				</div>
+				
 			</div>
 		</c:forEach>
 	</div>

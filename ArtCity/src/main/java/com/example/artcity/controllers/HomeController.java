@@ -81,6 +81,7 @@ public class HomeController {
 			System.out.println("Error");
 			return "artForm.jsp";
 		} else {
+			art.setCollector(art.getArtist());
 			artService.createArt(art);
 			System.out.println("Saved Art");
 			return "redirect:/dashboard";
@@ -91,7 +92,6 @@ public class HomeController {
 	public String dashboard(Model model) {
 		List<Art> allArts = artService.findAllToSale();
 		model.addAttribute("allArts", allArts);
-
 		return "dashboard.jsp";
 	}
 
@@ -233,7 +233,19 @@ public class HomeController {
 		User seller = userService.findUser(artToBuy.getArtist().getId());
 		userService.updateUserWallet(artToBuy.getPrice(), seller, buyer);
 		artToBuy.setCollector(buyer);
+		artToBuy.setInMarket(false);
 		artService.updateArt(artToBuy);
 		return "redirect:/dashboard";
 	}
+	
+	@PutMapping("/resell")
+	public String resell(Model model,@RequestParam("id") Long id, @RequestParam("price") Double price) {
+			Art artToBuy = artService.findArtById(id);
+			artToBuy.setInMarket(true);
+			artToBuy.setPrice(price);
+			artService.updateArt(artToBuy);
+			System.out.println("Saved Art");
+			return "redirect:/dashboard";
+	}
+	
 }
