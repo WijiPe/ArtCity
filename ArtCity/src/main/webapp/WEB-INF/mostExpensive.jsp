@@ -54,16 +54,8 @@
 
 		</div>
 	</div>
-	<div class="d-flex justify-content-between align-items-center text-center m-5">
+	<div class="align-items-center text-center m-5">
 		<h1 class="fontweigth">Explore Collections</h1>
-		<img src="images/moon.png" id="themeIcon">
-		<!-- <div>
-			<input type="checkbox" class="checkbox" id="chk" /> <label
-				class="label" for="chk"> <i class="fas fa-moon"></i> <i
-				class="fas fa-sun"></i>
-				<div class="ball"></div>
-			</label>
-		</div> -->
 	</div>
 	<div class="tabs d-flex justify-content-around m-3 border-bottom">
 			<p class="category2"><a href="/dashboard" class="text-dark mt-3 text-decoration-none">All</a></p>
