@@ -29,6 +29,7 @@
   	position:relative;
 }
  */
+
 .fa-moon {
 	color: #f1c40f;
 }
@@ -186,7 +187,7 @@ form.active {
 
 .fontweigth {
 	font-weight: 900;
-	margin-left: 500px;
+	margin-left:700px;
 }
 
 h3 {
