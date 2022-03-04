@@ -57,7 +57,8 @@
 	display: flex;
 	position: relative;
 	box-shadow: 5px 5px 5px 2px rgba(177, 173, 173, 0.295);
-	color: #212121
+	color: #212121;
+	margin-bottom: 10px;
 }
 
 .category2>a {
@@ -185,6 +186,7 @@ form.active {
 
 .fontweigth {
 	font-weight: 900;
+	margin-left: 500px;
 }
 
 h3 {
