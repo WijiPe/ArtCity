@@ -22,11 +22,15 @@ public class ArtService {
 	}
 	
 	public Art findArtById(Long id){
-		Optional<Art> optArt=artRepository.findById(id);
-		if(optArt.isPresent()) {
-			return optArt.get();
+		Optional<Art> optionalArt=artRepository.findById(id);
+		if(optionalArt.isPresent()) {
+			return optionalArt.get();
 		}
 		return null;
+	}
+	
+	public List<Art> findUserArts(Long id) {
+		return artRepository.findByArtist(id);
 	}
 	
 	public Art oneArt(Long id) {
@@ -59,8 +63,4 @@ public class ArtService {
 		return artRepository.findByInMarketIsTrue();
 	}
 	
-	public List<Art> searchArtist(String artist) {
-		return artRepository.findArtsByArtist(artist);
-	}
-
 }
