@@ -8,7 +8,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.artcity.models.Art;
 import com.example.artcity.models.User;
 
 @Repository

@@ -142,7 +142,7 @@ public class HomeController {
 	
 	@GetMapping("/dashboard/buy/{id}")
 	public String buyArt(@PathVariable("id") Long id) {
-		Art artTobuy=artService.findArtById(id);
+		artService.findArtById(id);
 		
 		return null;
 	}
