@@ -252,6 +252,15 @@ public class HomeController {
 		System.out.println("Saved Art");
 		return "redirect:/dashboard";
 	}
+
+	
+	@GetMapping("/arts/search")
+	public String findArtsByArtist(@RequestParam("artist")String artist, Model model) {
+		List<Art> arts = artService.searchArtist(artist);
+		model.addAttribute("arts", arts);
+		return "profileSearch.jsp";
+	}
+
 	@PutMapping("/cancel-sell")
 	public String cancelSell(Model model, HttpSession session ,@RequestParam("id") Long id) {
 		Art art = artService.findArtById(id);
@@ -266,10 +275,5 @@ public class HomeController {
 			return "redirect:/profilePageMain/"+session.getAttribute("userId");
 	}
 	
-//	@GetMapping("/showCollection")
-//	public String showCollection(Model model) {
-//		return "showCollection.jsp";
-//	}
-	
-	
+
 }
