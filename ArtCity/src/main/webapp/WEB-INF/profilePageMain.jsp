@@ -31,7 +31,7 @@
 			<img src="/images/Free_Sample_By_Wix.jpg" alt="Art City Logo" width="200" height="80"/>
 		</div>
 		<form onsubmit="event.preventDefault();" role="search">
-  			<input class="search" type="search" placeholder="Search items, collections, and accounts"  />  
+  			<input class="search" type="search" placeholder="Search artists"  />  
 		</form>
 		<div class="link">
 			<div class="dropdown">
@@ -41,7 +41,7 @@
   					<a href="#">Sport</a>
   					<a href="#">People</a>
   					<a href="#">Abstract</a>
-  					<a href="#">Digital</a>
+  					<a href="#">Digital Art</a>
   					<a href="#">Anime</a>
   				</div>
   			</div>
@@ -63,15 +63,15 @@
 			<img src="${user.userPicture}" alt="user_img" width="70" height="70" class="rounded-circle bg-secondary">
 		</div>
 		<div class="user_details text-center mt-5">
-			<p><c:out value="${user.userName}"/></p>
+			<p class="profileName"><c:out value="${user.userName}"/></p>
 			<p><c:out value="${user.description}"/></p>
 			<p>Email: <c:out value="${user.email}"/></p>
 			<p>Wallet: <c:out value="${user.wallet}" />Dojos</p>
 		</div>
 		<div class="user_tabs d-flex justify-content-around m-3 border-bottom" class="border">
-			<a href="/profilePageMain/${userId}" class="text-dark mt-3  text-decoration-none">Collected</a> 
-			<a href="/profilePageCreated/${userId}"class="text-dark mt-3 text-decoration-none">Created</a> 
-			<a href="#"class="text-dark mt-3 text-decoration-none">Favorited</a>
+			<h3><a href="/profilePageMain/${userId}" class="text-dark mt-3  text-decoration-none">Collected</a></h3>
+			<p class="section"><a href="/profilePageCreated/${userId}"class="text-dark mt-3 text-decoration-none">Created</a></p>
+			<p class="section"><a href="#"class="text-dark mt-3 text-decoration-none">Favorited</a></p>
 		</div>
 	<div class="user_nfts">
 		<c:forEach var="art" items="${user.nfts}">
@@ -93,23 +93,39 @@
 				</div>
 				
 				<div class="card_footer d-flex justify-content-between align-items-center ">
-					<c:if test="${art.collector.id == userId}">
+				<c:if test="${art.collector.id == userId}">
+						
 					<div class='card_footer'>
-						<button onClick="handleSell(${art.id})" class=" btn btn-link text-primary mt-3 text-decoration-none" value="${art.id}">Sell</button>
+					<c:choose>
+						 <c:when test="${art.inMarket == false}">
+							<button onClick="handleSell(${art.id})" class=" btn btn-link text-primary mt-3 text-decoration-none" value="${art.id}">Sell</button>
+						</c:when>
+						<c:otherwise>
+							<div class="groupbtn">
+								<button onClick="handleSell(${art.id})" class=" btn btn-link text-primary mt-3 text-decoration-none" value="${art.id}">Edit Price</button>
+								<form action="/cancel-sell" method="post">
+									<input type=hidden name="id" value="${art.id}" />
+									<input type="hidden" name="_method" value="put" />
+									<button class=" btn btn-link text-primary mt-3 text-decoration-none">Cancel Sell</button>
+								</form>
+							</div>
+					 	</c:otherwise>
+					 </c:choose>
 					</div>
-					
 					<div id="${art.id}" style="display:none">
 						<form action="/resell" method="post">
-						<input type="hidden" name="_method" value="put" />
+							<input type="hidden" name="_method" value="put" />
 							<input type=hidden name="id" value="${art.id}" />
 							<input class="inputtext" type="number" id="price" name="price" value="${art.price}"/>
-							<button>Submit</button>
+							<div class="groupbtn">
+								<button>Submit</button>
+								<a href="/cancel-edit">Cancel</a>
+							</div>
 						</form>
 					</div>
 					</c:if>
 					<a href="#" class="fav"> </a>
 				</div>
-				
 			</div>
 		</c:forEach>
 	</div>
