@@ -67,10 +67,10 @@
       </div>
     </div>
     <div class="page">
-      <div class="d-flex justify-content-between align-items-center text-center m-5">
-      	<h1 class="fontweigth">Explore Collections </h1>
-        <img onclick="darkTheme()" src="images/moon.png" id="themeIcon">
-      </div>
+      		<div class="d-flex justify-content-between align-items-center text-center m-5" >
+      			<h1 class="fontweigth">Explore Collections </h1>
+       		 	<img onclick="darkTheme()" src="images/moon.png" id="themeIcon">
+      		</div>
       <div class="tabs d-flex justify-content-around m-3 border-bottom">
         <p class="category2">
           <a href="/dashboard" class="mt-3 text-decoration-none">All </a>
