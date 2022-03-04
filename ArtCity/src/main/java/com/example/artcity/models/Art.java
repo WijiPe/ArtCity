@@ -57,7 +57,8 @@ public class Art {
     @JoinColumn(name="collector_id")
     private User collector;
 	
-
+	@NotNull
+	private Boolean inMarket;
     
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -73,6 +74,10 @@ public class Art {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
+    
+    public Art() {}
+    
+  
 	public Long getId() {
 		return id;
 	}
@@ -121,6 +126,12 @@ public class Art {
 	public void setCollector(User collector) {
 		this.collector = collector;
 	}
+	public Boolean getInMarket() {
+		return inMarket;
+	}
+	public void setInMarket(Boolean inMarket) {
+		this.inMarket = inMarket;
+	}
 	public Date getCreatedAt() {
 		return createdAt;
 	}
@@ -134,5 +145,4 @@ public class Art {
 		this.updatedAt = updatedAt;
 	}
 	
-
 }

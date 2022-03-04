@@ -81,6 +81,7 @@ public class HomeController {
 			System.out.println("Error");
 			return "artForm.jsp";
 		} else {
+			art.setCollector(art.getArtist());
 			artService.createArt(art);
 			System.out.println("Saved Art");
 			return "redirect:/dashboard";
@@ -91,7 +92,6 @@ public class HomeController {
 	public String dashboard(Model model) {
 		List<Art> allArts = artService.findAllToSale();
 		model.addAttribute("allArts", allArts);
-
 		return "dashboard.jsp";
 	}
 
@@ -139,12 +139,15 @@ public class HomeController {
 		model.addAttribute("allArts", allArts);
 		return "dashboardAbstract.jsp";
 	}
-
-//	@GetMapping("/showCollection")
-//	public String showCollection(Model model) {
-//		return "showCollection.jsp";
-//	}
 	
+	@GetMapping("/dashboard/buy/{id}")
+	public String buyArt(@PathVariable("id") Long id) {
+		Art artTobuy=artService.findArtById(id);
+		
+		return null;
+	}
+
+
 
 
 	@GetMapping("/profilePageMain/{userid}")
@@ -172,6 +175,7 @@ public class HomeController {
 		if (session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
+		System.out.println("In artDetails");
 		Art art = artService.oneArt(id);
 		model.addAttribute("art", art);
 		return "artDetails.jsp";
@@ -228,14 +232,27 @@ public class HomeController {
 
 	@GetMapping("/art/buy/{id}")
 	public String buyArt(@PathVariable("id") Long id, HttpSession session) {
+		System.out.println("In Art/buy");
 		Art artToBuy = artService.findArtById(id);
 		User buyer = userService.findUser((Long) session.getAttribute("userId"));
 		User seller = userService.findUser(artToBuy.getArtist().getId());
 		userService.updateUserWallet(artToBuy.getPrice(), seller, buyer);
 		artToBuy.setCollector(buyer);
+		artToBuy.setInMarket(false);
 		artService.updateArt(artToBuy);
 		return "redirect:/dashboard";
 	}
+	
+	@PutMapping("/resell")
+	public String resell(Model model,@RequestParam("id") Long id, @RequestParam("price") Double price) {
+		Art artToBuy = artService.findArtById(id);
+		artToBuy.setInMarket(true);
+		artToBuy.setPrice(price);
+		artService.updateArt(artToBuy);
+		System.out.println("Saved Art");
+		return "redirect:/dashboard";
+	}
+
 	
 	@GetMapping("/arts/search")
 	public String findArtsByArtist(@RequestParam("artist")String artist, Model model) {
@@ -243,4 +260,20 @@ public class HomeController {
 		model.addAttribute("arts", arts);
 		return "profileSearch.jsp";
 	}
+
+	@PutMapping("/cancel-sell")
+	public String cancelSell(Model model, HttpSession session ,@RequestParam("id") Long id) {
+		Art art = artService.findArtById(id);
+		art.setInMarket(false);
+		artService.updateArt(art);
+		System.out.println("Edit Art");
+		return "redirect:/profilePageMain/"+session.getAttribute("userId");
+	}
+	
+	@GetMapping("/cancel-edit")
+	public String cancelEdit(Model model, HttpSession session) {
+			return "redirect:/profilePageMain/"+session.getAttribute("userId");
+	}
+	
+
 }

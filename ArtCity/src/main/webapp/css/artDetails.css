@@ -12,6 +12,7 @@
   	position:relative;
   	margin-bottom:50px;
   	height: 100px;
+  	box-shadow: 5px 5px 5px 2px rgba(177, 173, 173, 0.295);
 }
 
 .topnav a{
@@ -236,8 +237,8 @@ img {
 
 .photo-main {
 	border-radius: 6px 6px 0 0;
-	background-color: #9be010;
-	background: radial-gradient(#e5f89e, #00ff00);
+	background-color: #bc85a3;
+	background: radial-gradient(#e5f89e,  #bc85a3);	
 
 	.controls {
 		display: flex;
