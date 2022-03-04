@@ -245,12 +245,25 @@ public class HomeController {
 	
 	@PutMapping("/resell")
 	public String resell(Model model,@RequestParam("id") Long id, @RequestParam("price") Double price) {
-			Art artToBuy = artService.findArtById(id);
-			artToBuy.setInMarket(true);
-			artToBuy.setPrice(price);
-			artService.updateArt(artToBuy);
-			System.out.println("Saved Art");
-			return "redirect:/dashboard";
+		Art artToBuy = artService.findArtById(id);
+		artToBuy.setInMarket(true);
+		artToBuy.setPrice(price);
+		artService.updateArt(artToBuy);
+		System.out.println("Saved Art");
+		return "redirect:/dashboard";
+	}
+	@PutMapping("/cancel-sell")
+	public String cancelSell(Model model, HttpSession session ,@RequestParam("id") Long id) {
+		Art art = artService.findArtById(id);
+		art.setInMarket(false);
+		artService.updateArt(art);
+		System.out.println("Edit Art");
+		return "redirect:/profilePageMain/"+session.getAttribute("userId");
+	}
+	
+	@GetMapping("/cancel-edit")
+	public String cancelEdit(Model model, HttpSession session) {
+			return "redirect:/profilePageMain/"+session.getAttribute("userId");
 	}
 	
 //	@GetMapping("/showCollection")
