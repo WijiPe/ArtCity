@@ -48,11 +48,11 @@
           <a href="#" class="dropbtn">Explore </a>
           <div class="dropdown-content">
             <a href="/dashboard">All Arts </a>
-            <a href="#">Sport </a>
-            <a href="#">People </a>
-            <a href="#">Abstract </a>
-            <a href="#">Digital Art</a>
-            <a href="#">Anime </a>
+            <a href="/dashboard/sport">Sport </a>
+            <a href="/dashboard/people">People </a>
+            <a href="/dashboard/abstract">Abstract </a>
+            <a href="/dashboard/digitalArt">Digital </a>
+            <a href="/dashboard/anime">Anime </a>
           </div>
         </div>
         <a class="active" href="/create-art">Create </a>
@@ -94,7 +94,7 @@
           <a href="/dashboard/abstract" class=" mt-3 text-decoration-none">Abstract </a>
         </p>
       </div>
-      <div class="pageCards">
+      <div class="pageContents">
         <!-- 	made few templates for cards  -->
         <!-- This is the card which looks like the one on welcome page of openseas -->
         <!--  d-flex justify-content-around -->

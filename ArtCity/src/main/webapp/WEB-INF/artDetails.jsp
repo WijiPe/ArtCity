@@ -14,6 +14,16 @@
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	/* function confirmBuy(){
+		var answer=confirm("Press 'ok' to confirm");
+		if (answer) {
+			window.location = "http://localhost:8080/dashboard";
+    	}else{
+    		
+    	}
+	} */
+</script>
 <title>Art Details Page</title>
 </head>
 <body>
@@ -28,13 +38,14 @@
 		<div class="link">
 			<div class="dropdown">
   				<a href="#" class="dropbtn">Explore</a>
-  				<div class="dropdown-content">
-  					<a href="#">Sport</a>
-  					<a href="#">People</a>
-  					<a href="#">Abstract</a>
-  					<a href="#">Digital</a>
-  					<a href="#">Anime</a>
-  				</div>
+  				 <div class="dropdown-content">
+		            <a href="/dashboard">All Arts </a>
+		            <a href="/dashboard/sport">Sport </a>
+		            <a href="/dashboard/people">People </a>
+		            <a href="/dashboard/abstract">Abstract </a>
+		            <a href="/dashboard/digitalArt">Digital </a>
+		            <a href="/dashboard/anime">Anime </a>
+		          </div>
   			</div>
   			<a  class="active" href="/create-art">Create</a>
   			<div class="dropdown">
@@ -67,7 +78,7 @@
 			Price: <span><c:out value="${art.price}"/> Dojo Coins</span>
 		</div>
 
-		<a href="/art/buy/${art.id}" class="button glow-on-hover p-3">Buy Now</a>
+		<a href="/art/buy/${art.id}" onclick="return confirm('Are you sure?')" class="button glow-on-hover p-3">Buy Now</a>
 		<div class="description">
 			<h3>Description</h3>
 

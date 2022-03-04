@@ -24,12 +24,12 @@
         <div class="dropdown">
           <a class="dropbtn" href="#news">Explore</a>
           <div class="dropdown-content">
-            <a href="/dashboard">All Arts</a>
-            <a href="#">Sport</a>
-            <a href="#">People</a>
-            <a href="#">Abstract</a>
-            <a href="#">Digital Art</a>
-            <a href="#">Anime</a>
+            <a href="/dashboard">All Arts </a>
+            <a href="/dashboard/sport">Sport </a>
+            <a href="/dashboard/people">People </a>
+            <a href="/dashboard/abstract">Abstract </a>
+            <a href="/dashboard/digitalArt">Digital </a>
+            <a href="/dashboard/anime">Anime </a>
           </div>
         </div>
         <a class="active" href="/create-art">Create</a>
