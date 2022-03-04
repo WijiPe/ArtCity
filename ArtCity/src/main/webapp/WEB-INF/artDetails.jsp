@@ -38,13 +38,14 @@
 		<div class="link">
 			<div class="dropdown">
   				<a href="#" class="dropbtn">Explore</a>
-  				<div class="dropdown-content">
-  					<a href="#">Sport</a>
-  					<a href="#">People</a>
-  					<a href="#">Abstract</a>
-  					<a href="#">Digital</a>
-  					<a href="#">Anime</a>
-  				</div>
+  				 <div class="dropdown-content">
+		            <a href="/dashboard">All Arts </a>
+		            <a href="/dashboard/sport">Sport </a>
+		            <a href="/dashboard/people">People </a>
+		            <a href="/dashboard/abstract">Abstract </a>
+		            <a href="/dashboard/digitalArt">Digital </a>
+		            <a href="/dashboard/anime">Anime </a>
+		          </div>
   			</div>
   			<a  class="active" href="/create-art">Create</a>
   			<div class="dropdown">
