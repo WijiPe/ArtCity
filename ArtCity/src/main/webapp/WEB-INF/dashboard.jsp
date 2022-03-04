@@ -25,8 +25,7 @@
 				width="200" height="80" />
 		</div>
 		<form onsubmit="event.preventDefault();" role="search">
-			<input class="search" type="search"
-				placeholder="Search items, collections, and accounts" />
+			<input class="search" type="search" placeholder="Search artists" />
 		</form>
 		<div class="link">
 			<div class="dropdown">
@@ -62,30 +61,14 @@
 		</div> -->
 	</div>
 	<div class="tabs d-flex justify-content-around m-3 border-bottom">
-		<p class="category2">
-			<a href="/dashboard" class="mt-3 text-decoration-none">All</a>
-		</p>
-		<p class="category2">
-			<a href="/dashboard/mostExpensive" class=" mt-3 text-decoration-none">Most
-				Expensive</a>
-		</p>
-		<p class="category2">
-			<a href="/dashboard/anime" class=" mt-3 text-decoration-none">Anime</a>
-		</p>
-		<p class="category2">
-			<a href="/dashboard/people" class=" mt-3 text-decoration-none">People</a>
-		</p>
-		<p class="category2">
-			<a href="/dashboard/digitalArt" class=" mt-3 text-decoration-none">Digital
-				Art</a>
-		</p>
-		<p class="category2">
-			<a href="/dashboard/sport" class=" mt-3 text-decoration-none">Sport</a>
-		</p>
-		<p class="category2">
-			<a href="/dashboard/abstract" class=" mt-3 text-decoration-none">Abstract</a>
-		</p>
-	</div>
+			<h3><a href="/dashboard" class="text-dark mt-3 text-decoration-none">All</a></h3>
+			<p class="category2"><a href="/dashboard/mostExpensive" class="text-dark mt-3 text-decoration-none">Most Expensive</a></p>
+			<p class="category2"><a href="/dashboard/anime" class="text-dark mt-3 text-decoration-none">Anime</a></p>
+			<p class="category2"><a href="/dashboard/people" class="text-dark mt-3 text-decoration-none">People</a></p>
+			<p class="category2"><a href="/dashboard/digitalArt" class="text-dark mt-3 text-decoration-none">Digital Art</a></p>
+			<p class="category2"><a href="/dashboard/sport" class="text-dark mt-3 text-decoration-none">Sport</a></p>
+			<p class="category2"><a href="/dashboard/abstract" class="text-dark mt-3 text-decoration-none">Abstract</a></p>
+		</div>
 
 	<div class="pageContents">
 		<!-- 	made few templates for cards  -->
@@ -98,8 +81,7 @@
 						src="${art.artwork}" alt="Problem Loading Page"
 						style="width: 100%" height="250"></a>
 				</div>
-				<div
-					class="card-details d-flex justify-content-between align-items-center">
+				<div class="card-details d-flex justify-content-between align-items-center">
 
 					<div class="detail">
 						<div>
@@ -113,52 +95,16 @@
 					</div>
 				</div>
 
-				<div
-					class="card_footer d-flex justify-content-between align-items-center ">
+				<div class="card_footer d-flex justify-content-between align-items-center ">
 					<c:if test="${art.collector.id != userId}">
 						<div class='card_footer'>
-							<a href="/artDetails/${art.id}"
-								class="btn btn-link text-primary mt-3 text-decoration-none">Buy
-								Now</a>
+							<a href="/artDetails/${art.id}" class="btn btn-link text-primary mt-3 text-decoration-none">Buy Now</a>
 						</div>
 					</c:if>
 					<a href="#" class="fav"> </a>
 				</div>
-
 			</div>
 		</c:forEach>
 	</div>
 </body>
 </html>
-
-<!-- This is the card which looks like the one on Explore page of openseas -->
-<!-- 	<div class="card ml-3 mt-3" style="width: 300px">
-				<div class="card_header">
-					<img class="card-img-top" src="images/art_sample.png"
-						alt="Problem Loading Page" style="width: 100%" height="150">
-				</div>
-				<div style="margin:-29px 0" class="text-center">
-					<img src="images/user_img.png" alt="user_img" width="50" height="50" class="rounded-circle bg-secondary">
-				</div>
-				<div class="card-footer">
-
-					<div class="mt-3 text-center">
-						<h4 class="card-title">Collection name of <a href="#">Artist</a></h4>
-					</div>
-					<div class=" text-center">
-						<p>Description about collection</p>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
-
-
-<!-- <div class="top_nav d-flex justify-content-between">
-			<h1>Welcome to Market User</h1>
-			<div class="d-flex align-items-center ">
-				<p class="m-3">UserName</p>
-				<img src="images/user_img.png" alt="user_img" width="50" height="50"
-					class="rounded-circle bg-secondary">
-			</div>
-		</div> -->

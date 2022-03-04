@@ -23,7 +23,7 @@
 			<img src="images/Free_Sample_By_Wix.jpg" alt="ArtCityLogo" width="200" height="80">
 		</div>
 		<form onsubmit="event.preventDefault();" role="search">
-  			<input class="search" type="search" placeholder="Search items, collections, and accounts"  />  
+  			<input class="search" type="search" placeholder="Search artists"  />  
 		</form>
 		<div class="link">
 			<div class="dropdown">

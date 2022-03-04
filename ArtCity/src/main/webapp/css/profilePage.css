@@ -223,3 +223,23 @@ body {
   
   background-image: url(/images/favorited.png);
 }
+
+.groupbtn{
+	display: flex;
+	justify-content: space-between;
+	flex-position:row;
+}
+
+.profileName{
+	font-weight:900;
+}
+
+.section{
+	transition: transform .2s;
+}
+
+.section:hover, .section:active  {
+  	-ms-transform: scale(1.5); /* IE 9 */
+  	-webkit-transform: scale(1.5); /* Safari 3-8 */
+	transform: scale(1.5);
+}
