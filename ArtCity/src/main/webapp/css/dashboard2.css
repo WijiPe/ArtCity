@@ -262,3 +262,23 @@ card-footer>div {
 .fav:hover {
 	background-image: url(/images/favorited.png);
 }
+
+.image_placeHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 2px solid;
+
+}
+.image_placeHolder img {
+    flex-shrink: 0;
+    min-width: 100%;
+    height:250px;
+}
+.rounded-circle{
+	border: 2px solid;
+	height:150px;
+	width: 150px;
+	
+}
