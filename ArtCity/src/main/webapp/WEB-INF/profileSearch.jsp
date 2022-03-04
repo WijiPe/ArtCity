@@ -25,10 +25,10 @@
   			//pageTag.calssList.add("dark-mode");
   			if(pageTag.classList.contains("dark-theme")){
   				pageTag.classList.remove("dark-theme")
-  				themeIcon.src="images/moon.png";
+  				themeIcon.src="/images/moon.png";
   			}else{
   				pageTag.classList.add("dark-theme")
-  				themeIcon.src="images/sun.png"
+  				themeIcon.src="/images/sun.png"
   			}
   		}
   	</script> 
@@ -70,7 +70,7 @@
     <div class="page">
       <div class="d-flex justify-content-between align-items-center text-center m-5">
         <h1 class="fontweigth">Explore Collections </h1>
-        <img onclick="darkTheme()" src="images/moon.png" id="themeIcon">
+        <img onclick="darkTheme()" src="/images/moon.png" id="themeIcon">
       </div>
       <div class="tabs d-flex justify-content-around m-3 border-bottom">
 
