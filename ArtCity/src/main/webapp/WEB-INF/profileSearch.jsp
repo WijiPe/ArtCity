@@ -65,16 +65,25 @@
         </div>
       </div>
     </div>
-    
+    <div class="image_placeHolder">
+		<img src="/images/bvqVKk.jpg" alt="problem  Loding img" height="100" width="auto"/>
+	</div>
+		<div class="/profile_img text-center" style="margin:-29px 0">
+			<img src="${user.userPicture}" alt="user_img" width="70" height="70" class="rounded-circle bg-secondary">
+		</div>
+		<div class="user_details text-center mt-5">
+			<p class="profileName"><c:out value="${user.userName}"/></p>
+			<p><c:out value="${user.description}"/></p>
+			<p>Email: <c:out value="${user.email}"/></p>
+		</div>
     <div class="page">
       <div class="d-flex justify-content-between align-items-center text-center m-5">
         <h1 class="fontweigth">Explore Collections </h1>
         <img onclick="darkTheme()" src="/images/moon.png" id="themeIcon">
       </div>
       <div class="tabs d-flex justify-content-around m-3 border-bottom">
-
         <p class="category2">
-          <span class=" mt-3 text-decoration-none">Search Result</span>
+          <span class=" mt-3 text-decoration-none">User Creations</span>
         </p>
       </div>
       <div class="pageContents">
