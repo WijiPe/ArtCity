@@ -32,7 +32,7 @@
   			}
   		}
   	</script> 
-    <title>Welcome Page </title>
+    <title>Artist Page</title>
     
   </head>
   <body>
