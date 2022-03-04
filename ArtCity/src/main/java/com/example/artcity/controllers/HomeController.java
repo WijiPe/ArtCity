@@ -236,4 +236,11 @@ public class HomeController {
 		artService.updateArt(artToBuy);
 		return "redirect:/dashboard";
 	}
+	
+	@GetMapping("/arts/search")
+	public String findArtsByArtist(@RequestParam("artist")String artist, Model model) {
+		List<Art> arts = artService.searchArtist(artist);
+		model.addAttribute("arts", arts);
+		return "profileSearch.jsp";
+	}
 }

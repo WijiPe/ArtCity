@@ -58,4 +58,8 @@ public class ArtService {
 	public List<Art> findAllToSale(){
 		return artRepository.findByCollectorIsNull();
 	}
+	
+	public List<Art> searchArtist(String artist) {
+		return artRepository.findArtsByArtist(artist);
+	}
 }
