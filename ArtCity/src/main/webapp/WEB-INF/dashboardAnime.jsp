@@ -28,7 +28,7 @@
             <a href="/dashboard/sport">Sport </a>
             <a href="/dashboard/people">People </a>
             <a href="/dashboard/abstract">Abstract </a>
-            <a href="/dashboard/digitalArt">Digital </a>
+            <a href="/dashboard/digitalArt">Digital Art</a>
             <a href="/dashboard/anime">Anime </a>
           </div>
         </div>
