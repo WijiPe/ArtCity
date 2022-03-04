@@ -256,8 +256,10 @@ public class HomeController {
 	
 	@GetMapping("/arts/search")
 	public String findArtsByArtist(@RequestParam("artist")String artist, Model model) {
-		List<Art> arts = artService.searchArtist(artist);
+		User user = userService.findUserByName(artist);
+		List<Art> arts=artService.findAllArt();
 		model.addAttribute("arts", arts);
+		model.addAttribute("user", user);
 		return "profileSearch.jsp";
 	}
 
