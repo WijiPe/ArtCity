@@ -51,8 +51,8 @@
 		            <a href="/dashboard/sport">Sport </a>
 		            <a href="/dashboard/people">People </a>
 		            <a href="/dashboard/abstract">Abstract </a>
-		            <a href="/dashboard/digitalArt">Digital </a>
-		            <a href="/dashboard/anime">Anime </a>
+		            <a href="/dashboard/digitalArt">Digital Art</a>
+		            <a href="/dashboard/anime">Anime</a>
   				</div>
         </div>
         <a class="active" href="/create-art">Create </a>
@@ -60,7 +60,6 @@
           <img src="/images/login.png" alt="User Logo" width="40" height="40">
           <div class="dropdown-content">
             <a href="/profilePageMain/${userId} ">Profile </a>
-            <a href="/editProfile/${userId}">Edit </a>
             <a href="/logout">Log out </a>
           </div>
         </div>
@@ -78,7 +77,7 @@
           <span class=" mt-3 text-decoration-none">Search Result</span>
         </p>
       </div>
-      <div class="pageCards">
+      <div class="pageContents">
 	<c:forEach var="art" items="${arts}">
 	  <c:if test="${art.artist.id == user.id}">
           <div class="card" style="width: 300px">
