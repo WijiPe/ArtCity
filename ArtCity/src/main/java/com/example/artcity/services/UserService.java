@@ -90,6 +90,14 @@ public class UserService {
     	userRepository.save(user);
 	}
     
+    public User findUserByName (String name) {
+        Optional<User> optionalUser = userRepository.findUserByUserName(name);
+        if (optionalUser.isPresent()) {
+            return optionalUser.get();
+        } else
+            return null;
+    }
+    
     public void updateUserWallet(Double amount,User seller, User buyer) {
     	buyer.setWallet(buyer.getWallet()-amount);
     	buyer.setConfirm("testTest");
